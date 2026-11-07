@@ -30,45 +30,28 @@ const affiliateWebsiteSchema = {
 
 const schema = {
 	'@context': 'https://schema.org',
-	'@type': 'LocalBusiness',
-	name: company.fullName || company.name,
+	'@type': 'Organization',
+	name: company.name || '机场测试',
+	alternateName: 'jichangcesu.blog',
 	description: company.description || seo.defaultDescription,
 	image: `${siteBase}/og-image-v20261010.png`,
-	'@id': siteBase,
+	'@id': `${siteBase}/#organization`,
 	url: siteBase,
-	telephone: company.phone,
-	email: company.email,
-	priceRange: company.priceRange || '$$',
-	address: {
-		'@type': 'PostalAddress',
-		streetAddress: company.address,
-		addressLocality: company.city,
-		postalCode: company.zipCode,
-		addressCountry: 'PL',
-	},
-	geo: {
-		'@type': 'GeoCoordinates',
-		latitude: company.geo?.lat || 52.4064,
-		longitude: company.geo?.lng || 16.9252,
-	},
-	openingHoursSpecification: [
-		{
-			'@type': 'OpeningHoursSpecification',
-			dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-			// Optional chaining: hours may be empty/missing in company.json,
-			// then schema falls back to default hours instead of throwing TypeError.
-			opens: company.hours?.split(' - ')?.[0]?.split(': ')?.pop() ?? '08:00',
-			closes: company.hours?.split(' - ')?.[1] ?? '16:00',
-		},
-	],
+	email: company.email || 'contact@jichangcesu.blog',
 	sameAs: getSocialUrls(company),
 };
 
 const websiteSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'WebSite',
-	name: seo.defaultTitle,
+	name: '机场测试 (jichangcesu.blog)',
+	alternateName: '2026 稳定机场推荐与晚高峰节点测速指南',
 	url: siteBase,
+	potentialAction: {
+		'@type': 'SearchAction',
+		target: `${siteBase}/brands/?q={search_term_string}`,
+		'query-input': 'required name=search_term_string'
+	}
 };
 ---
 

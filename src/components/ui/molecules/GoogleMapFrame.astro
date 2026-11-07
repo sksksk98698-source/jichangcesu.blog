@@ -79,8 +79,8 @@ const {
 			const status = () => {
 				try { return window.localStorage.getItem("cookie-consent-status"); } catch { return null; }
 			};
-			if (!window.WebScaleCookies || status() === "accepted") loadMap();
-			else settings?.addEventListener("click", () => window.WebScaleCookies?.openSettings());
+			if (!window.SiteConsent || status() === "accepted") loadMap();
+			else settings?.addEventListener("click", () => window.SiteConsent?.openSettings());
 			window.addEventListener("cookie-consent-accepted", loadMap);
 		});
 	}

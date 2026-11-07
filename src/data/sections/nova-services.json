@@ -1,8 +1,8 @@
 {
-  "title": "Nasze usługi",
-  "description": "Kompleksowe wsparcie na każdym etapie, od koncepcji po wdrożenie i dalszy rozwój.",
-  "linkLabel": "Zobacz wszystkie",
-  "linkHref": "/uslugi/",
+  "title": "4大硬核测评准则 · 杜绝水分宣传",
+  "description": "我们为什么坚持实机多轮测速？普通测速软件通常只能反映瞬间峰值，而「机场测试」建立了一整套严格的鉴别机制：",
+  "linkLabel": "查看全部评测标准",
+  "linkHref": "/#services",
   "items": [
     { "number": "01.", "icon": "palette", "title": "UX/UI Design", "description": "Nowoczesny i funkcjonalny design dopasowany do Twojej marki. Projektujemy doświadczenia, które są intuicyjne i wspierają cele biznesowe." },
     { "number": "02.", "icon": "browser", "title": "Strony internetowe", "description": "Szybkie, responsywne i zoptymalizowane rozwiązania dla biznesu. Tworzymy strony, które dobrze wyglądają i skutecznie prowadzą do kontaktu." },

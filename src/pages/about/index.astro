@@ -1,0 +1,187 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const seoTitle = "关于我们与测速实验室方法论 · 机场测试 (jichangcesu.blog)";
+const seoDescription = "认识「机场测试」技术评测实验室。了解我们的国内三网实机探针部署、晚高峰并发压测标准、真假专线鉴别体系，以及坚持独立、客观、中立的避坑评测原则。";
+
+const labProbes = [
+  { isp: "中国电信 (China Telecom)", loc: "广东广州 / 上海", backbone: "163 骨干网 + CN2 GIA 专线双轨探针", bw: "千兆 FTTR 纯光纤下行" },
+  { isp: "中国联通 (China Unicom)", loc: "北京 / 江苏徐州", backbone: "AS4837 优化网 + AS9929 精品 A 网探针", bw: "1000Mbps 独立静态专线" },
+  { isp: "中国移动 (China Mobile)", loc: "广东深圳 / 浙江杭州", backbone: "CMI 国际出境直连海缆节点", bw: "1000Mbps 极速下行" }
+];
+
+const teamMembers = [
+  {
+    role: "首席网络架构师 & 创始人",
+    name: "Alex Zhang",
+    bio: "前跨国外企分布式系统网络工程师，12 年 BGP/MPLS 跨国专线运维经验。负责「机场测试」核心路由追踪引擎与 IPLC/IEPL 专线底层抓包鉴别。"
+  },
+  {
+    role: "流媒体与 AI 安全测试主管",
+    name: "Kevin Lin",
+    bio: "资深 DevOps 工程师，深度专研住宅原生 IP 探测算法、Cloudflare WAF 穿透与 OpenAI/Claude 风控机制，主导流媒体全解锁实机验证。"
+  },
+  {
+    role: "客户端协议研究员",
+    name: "Sarah Chen",
+    bio: "开源网络协议贡献者，对 Shadowsocks-rust、Sing-box、Mihomo/Clash 及 TUN 虚拟网卡底层转发机制有深度研究，负责编写各端报错排查手册。"
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "关于机场测试实验室",
+  "description": seoDescription,
+  "url": "https://jichangcesu.blog/about/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "机场测试",
+    "url": "https://jichangcesu.blog",
+    "logo": "https://jichangcesu.blog/og-image-v20261010.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@jichangcesu.blog",
+      "contactType": "editorial support"
+    }
+  }
+};
+---
+
+<Layout title={seoTitle} description={seoDescription} fullBleedTop={false}>
+  <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://jichangcesu.blog/"},{"@type":"ListItem","position":2,"name":"关于我们与实测实验室","item":"https://jichangcesu.blog/about/"}]})} />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <div class="relative min-h-screen py-12 sm:py-16 bg-brand-page text-brand-dark">
+    <!-- 顶部背景流光 -->
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-brand-accent/10 to-transparent blur-3xl opacity-60" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <!-- 页面顶部 Header -->
+        <!-- 面包屑导航 -->
+        <nav aria-label="面包屑导航" class="mb-4 flex items-center justify-center gap-1.5 text-xs text-brand-dark/50">
+          <a href="/" class="hover:text-brand-primary transition-colors">首页</a>
+          <span>/</span>
+          <span class="text-brand-dark/80 font-medium">关于我们与实测实验室</span>
+        </nav>
+      <div class="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/5 px-4 py-1.5 text-xs font-semibold text-brand-accent mb-4">
+          <span>E-E-A-T 权威披露 · 独立测评实验室</span>
+        </div>
+        <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl text-brand-dark">
+          关于「机场测试」实验室
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-brand-dark/70 leading-relaxed">
+          我们是一群热衷于底层网络性能与协议安全的工程师。拒绝任何未经实机验证的虚标宣传，用硬核数据与真机测试，为您还原 42 家机场最真实的晚高峰体验。
+        </p>
+      </div>
+
+      <!-- 第一部分：为什么创立「机场测试」 -->
+      <section class="mb-16 rounded-3xl border border-brand-dark/10 bg-white/80 backdrop-blur-md p-6 sm:p-10 shadow-sm">
+        <div class="max-w-3xl">
+          <span class="rounded bg-brand-dark px-2.5 py-1 text-xs font-bold text-white mb-3 inline-block">
+            创立初心
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark">
+            为什么翻墙圈需要一份纯粹、客观的测速指南？
+          </h2>
+          <div class="mt-4 space-y-3.5 text-xs sm:text-sm text-brand-dark/80 leading-relaxed">
+            <p>
+              在当下的互联网中，充斥着大量粗制滥造的 Affiliates 站群——它们不买套餐、不测节点、甚至连真实客户端都未曾打开，全凭商家给出的广告文案批量抄袭，把极度超卖的廉价直连鼓吹成“全专线”，导致无数小白用户频繁踩坑、被跑路收割。
+            </p>
+            <p>
+              「机场测试」的建立初衷极为简单：<strong>“无实测，不评测”</strong>。每一个登上本站推荐榜单的品牌，都必须经过我们遍布全国的真实物理探针在晚高峰 20:00~22:30 的持续长周期压测。我们敢于公开测速原图、敢于揭露跑路风险黑榜，坚持用事实守住科研工作者的网络底线。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 第二部分：实测实验室探针与硬件环境公开 -->
+      <section class="mb-16">
+        <div class="text-center mb-10 max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark">
+            三网千兆物理探针与测试环境
+          </h2>
+          <p class="mt-2 text-sm text-brand-dark/70">
+            透明公开：本站所有跑分与测速数据，均由以下真实光纤宽带机房节点采集输出：
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {labProbes.map((item) => (
+            <div class="rounded-2xl border border-brand-dark/10 bg-white p-6 shadow-sm">
+              <span class="rounded bg-brand-accent/10 text-brand-accent px-2 py-0.5 text-xs font-bold mb-3 inline-block">
+                实测探针
+              </span>
+              <h3 class="text-base font-bold text-brand-dark mb-1">
+                {item.isp}
+              </h3>
+              <p class="text-xs text-brand-dark/60 font-mono mb-4">
+                地理分布：{item.loc}
+              </p>
+              <div class="space-y-2 text-xs text-brand-dark/80 border-t border-brand-dark/5 pt-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-brand-dark/60">骨干网类型：</span>
+                  <span class="font-medium">{item.backbone}</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-brand-dark/60">下行物理带宽：</span>
+                  <span class="font-mono text-brand-primary font-bold">{item.bw}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 第三部分：核心测试团队专业背景 (E-E-A-T 核心) -->
+      <section class="mb-16 rounded-3xl border border-brand-dark/10 bg-white/80 backdrop-blur-md p-6 sm:p-10 shadow-sm">
+        <div class="text-center mb-10 max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark">
+            技术评测核心团队成员
+          </h2>
+          <p class="mt-2 text-sm text-brand-dark/70">
+            具备扎实计算机网络与信息安全背景的工程师团队，为评测的权威性护航：
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {teamMembers.map((m) => (
+            <div class="rounded-2xl border border-brand-dark/10 bg-brand-page/50 p-6 flex flex-col justify-between">
+              <div>
+                <div class="size-12 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-lg mb-3">
+                  {m.name.charAt(0)}
+                </div>
+                <h3 class="text-base font-bold text-brand-dark">{m.name}</h3>
+                <span class="text-xs font-semibold text-brand-primary mb-3 block">{m.role}</span>
+                <p class="text-xs text-brand-dark/70 leading-relaxed">
+                  {m.bio}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 第四部分：联系我们与中立性承诺 -->
+      <section class="rounded-3xl border-2 border-brand-accent/40 bg-gradient-to-br from-brand-page via-white to-brand-accent/5 p-6 sm:p-10 shadow-lg text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mb-3">
+          保持联系与评测纠错
+        </h2>
+        <p class="text-xs sm:text-sm text-brand-dark/70 max-w-xl mx-auto leading-relaxed mb-6">
+          如果您是机场运营方且近期对专线架构进行了重大升级，或者您是普通用户发现某家服务商出现跑路异常，欢迎向我们提交最新线索：
+        </p>
+        <div class="inline-flex items-center gap-2 rounded-xl bg-brand-dark px-5 py-3 text-sm font-mono text-white shadow-sm select-all">
+          <span>📧 官方评测邮箱：contact@jichangcesu.blog</span>
+        </div>
+        <div class="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold text-brand-accent">
+          <a href="/brands/" class="hover:underline">查阅 42 家机场品牌库 →</a>
+          <a href="/faq/" class="hover:underline">查阅万字 FAQ 百科 →</a>
+          <a href="/warning/" class="hover:underline">查阅跑路预警雷达 →</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</Layout>

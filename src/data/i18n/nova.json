@@ -1,284 +1,694 @@
 {
   "pl": {
     "page": {
-      "title": "Nova, strony internetowe dla ambitnych marek",
-      "description": "Tworzymy nowoczesne strony internetowe, które wzmacniają wizerunek, przyciągają klientów i wspierają rozwój biznesu.",
-      "heading": "Nowe możliwości dla ambitnych marek"
+      "title": "机场测试 - 2026 稳定机场推荐与晚高峰节点测速评测指南",
+      "description": "机场测试 (jichangcesu.blog) 专注于 2026 真实晚高峰节点测速与流媒体/ChatGPT 解锁评测。深度横评光速云、暮光加速、飞猫云等 42 家精选机场，提供透明实测图与全平台客户端下载指引。",
+      "heading": "2026 权威机场测速指南 · 42 家主流机场深度实测"
     },
     "demoBanner": {
-      "label": "Ten template został zaprojektowany i wdrożony przez WebScale.",
-      "downloadLabel": "Pobierz template",
-      "downloadHref": "https://github.com/Wiktorkulas51/template-t001-nova",
-      "customizeLabel": "Zamów customizację",
-      "customizeHref": "https://webscale.pl/?utm_source=nova-demo&utm_medium=banner&utm_campaign=t001-nova-custom"
+      "label": "",
+      "downloadLabel": "",
+      "downloadHref": "",
+      "customizeLabel": "",
+      "customizeHref": ""
     },
     "navigation": {
       "menu": [
-        { "label": "O nas", "href": "#zespol" },
-        { "label": "Usługi", "href": "#uslugi" },
-        { "label": "Realizacje", "href": "#realizacje" },
-        { "label": "Opinie", "href": "#opinie" }
+        {
+          "label": "42家品牌评测",
+          "href": "/brands/"
+        },
+        {
+          "label": "客户端大全",
+          "href": "/clients/"
+        },
+        {
+          "label": "万字 FAQ",
+          "href": "/faq/"
+        },
+        {
+          "label": "跑路预警雷达",
+          "href": "/warning/"
+        },
+        {
+          "label": "免费资源箱",
+          "href": "/free/"
+        },
+        {
+          "label": "榜首主推",
+          "href": "/#featured"
+        }
       ],
       "cta": {
-        "label": "Rozpocznij projekt",
-        "hoverLabel": "Porozmawiajmy",
-        "href": "#kontakt"
+        "label": "主推：光速云（优惠码 AMM）",
+        "hoverLabel": "直达官网（9折优惠）",
+        "href": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
       },
       "aria": {
-        "menuOpen": "Otwórz menu nawigacji",
-        "menuClose": "Zamknij menu",
-        "menuExpand": "Rozwiń podmenu",
-        "navMain": "Nawigacja główna",
-        "drawer": "Menu nawigacji"
+        "menuOpen": "打开导航菜单",
+        "menuClose": "关闭导航菜单",
+        "menuExpand": "展开子菜单",
+        "navMain": "主导航",
+        "drawer": "导航抽屉"
       },
-      "languageLabel": "Wybierz język"
+      "languageLabel": "语言"
     },
     "sections": {
       "nova-hero-wireframe": {
-        "eyebrow": "STRATEGIA / DESIGN / TECHNOLOGIA",
-        "heading": "Nowe możliwości dla",
-        "headingAccent": "ambitnych marek",
-        "description": "Tworzymy nowoczesne strony internetowe, które wzmacniają wizerunek, przyciągają klientów i realnie wspierają rozwój biznesu.",
-        "primaryCTA": { "label": "Rozpocznij projekt", "href": "#kontakt" },
-        "secondaryCTA": { "label": "Poznaj nas", "href": "#zespol" },
-        "trustedBy": "Zaufali nam",
-        "trustItems": ["MODO", "LUMI", "KOVO", "NOMA", "ASPEKT"],
-        "image": "/assets/images/t001-nova/t001-nova-hero.webp",
-        "imageAlt": "Strateg pracujący przy laptopie",
+        "eyebrow": "2026 权威机场实测指南 · 晚高峰真实测速",
+        "heading": "42家主流机场真测速",
+        "headingAccent": "好节点拒绝虚标套壳",
+        "description": "拒绝劣质中转冒充内网专线。基于晚高峰高并发网络环境，深度横评光速云、暮光加速、飞猫云等 42 家主流机场，全节点真实延迟、4K 视频流码率、ChatGPT 与流媒体解锁真实可见，助你轻松选出不卡顿的高性价比梯子。",
+        "primaryCTA": {
+          "label": "光速云独家特惠（优惠码 AMM）",
+          "href": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
+        },
+        "secondaryCTA": {
+          "label": "查阅 42 家品牌对比库",
+          "href": "/brands/"
+        },
+        "trustedBy": "晚高峰延迟实测标杆（光速云样本）",
+        "trustItems": [
+          "香港 22ms",
+          "新加坡 46ms",
+          "日本 57ms",
+          "台湾 41ms",
+          "美国 143ms"
+        ],
+        "image": "/assets/images/reviews/guangsu-speedtest.png",
+        "imageAlt": "光速云 2026 真实节点测速面板",
         "stats": [
-          { "value": "2000+", "label": "Zrealizowanych projektów" },
-          { "value": "10+", "label": "Lat doświadczenia" },
-          { "value": "800+", "label": "Godzin pracy nad produktem" },
-          { "value": "150M+", "label": "Przychodu u naszych klientów" }
+          {
+            "value": "42+",
+            "label": "收录实测品牌"
+          },
+          {
+            "value": "17+",
+            "label": "全节点测速大图"
+          },
+          {
+            "value": "100%",
+            "label": "晚高峰真实样本"
+          },
+          {
+            "value": "0",
+            "label": "虚假跑路推广"
+          }
         ]
       },
       "nova-projects": {
-        "title": "Pomysły zamieniamy w realne efekty",
-        "description": "Łączymy strategiczne myślenie, dopracowany design i nowoczesne technologie, aby tworzyć strony, które nie tylko wyglądają dobrze, ale przede wszystkim działają.",
-        "linkLabel": "Zobacz realizacje",
-        "linkHref": "#realizacje",
+        "eyebrow": "TOP 10 核心推荐梯队",
+        "heading": "2026 精选梯队实测榜单",
+        "description": "基于线路稳定性、晚高峰带宽冗余、流媒体与 AI 工具解锁完整度、客服响应及跑路风险综合评估。榜首主推光速云，搭配暮光、飞猫等高性价比梯队。",
+        "viewAllLabel": "查看全部 42 家机场品牌库",
+        "viewAllHref": "/brands/",
         "items": [
-          { "category": "Strony internetowe", "title": "Marka premium z nową stroną", "image": "/assets/images/t001-nova/t001-nova-project-laptop.webp", "alt": "Laptop z projektem strony internetowej" },
-          { "category": "Wizerunek marki", "title": "Nowy wizerunek dla ambitnej marki", "image": "/assets/images/t001-nova/t001-nova-project-building.webp", "alt": "Nowoczesny budynek jako przykład realizacji" }
-        ]
+          {
+            "title": "光速云 (GSY Cloud)",
+            "category": "⭐ 榜首第一力荐 · 斯诺克147永久套餐 · 优惠码 AMM",
+            "description": "2020年稳定运营至今。独创 IEPL 专线与企业级内网双线路架构，单节点最高 2.5Gbps 带宽。特设 147 元 247GB 永久不限期套餐（无过期风险）与 99 元/年（69GB/月）入门版。晚高峰香港实测 22ms、下载 529Mbps，完美支持 Claude、Netflix、Disney+、TikTok。",
+            "image": "/assets/images/reviews/guangsu-speedtest.png",
+            "alt": "光速云测速大图",
+            "link": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y",
+            "linkLabel": "直达光速云官网",
+            "tag": "榜首第一主推"
+          },
+          {
+            "title": "暮光加速 (Twilight)",
+            "category": "⭐ TOP 2 稳定梯队 · BGP智能调度 · 优惠码 muguang5555",
+            "description": "2023年上线运营，20元/月 120GB 流量档。主打 BGP 智能调度系统与低延迟专线出口，晚高峰抗波动能力出众，三网自动路由最优端内转发，适合对延迟敏感的游戏加速与视频创作人员。",
+            "image": "/assets/images/reviews/muguang-speedtest.png",
+            "alt": "暮光加速测速报告",
+            "link": "https://varnexa.twilightaff.com/#/?code=D1LHglg3",
+            "linkLabel": "直达暮光加速官网",
+            "tag": "TOP 2 精选"
+          },
+          {
+            "title": "飞猫云 (FlyCat)",
+            "category": "⭐ TOP 3 性价比 · 7元超低门槛 · 8折优惠码 flycat888",
+            "description": "低门槛性价比代表，7元档搭配 8 折优惠码后极具价格诱惑力。实测节点覆盖亚洲主流地区，下载速率实测突破 86 MB/s，适合预算有限、轻度查资料与学术科研的学生及尝鲜群体。",
+            "image": "/assets/images/reviews/feimao-speedtest.png",
+            "alt": "飞猫云测速大图",
+            "link": "https://guangs.flycataff.com/#/?code=6uq0Xe9y",
+            "linkLabel": "直达飞猫云官网",
+            "tag": "TOP 3 性价比"
+          },
+          {
+            "title": "微风网络 (BreezeNet)",
+            "category": "⭐ TOP 4 实用专线 · 7元超值档 · 9折优惠码 flat888",
+            "description": "主打大带宽传输与多媒体下载，7元档配合折扣码入手极划算。实测支持主流流媒体解锁，节点响应迅速，后台管理简洁直观，是兼顾价格与日常流畅度的实用之选。",
+            "image": "/assets/images/reviews/weifeng-speedtest.png",
+            "alt": "微风网络测速报告",
+            "link": "https://edp01.breezenetaff.com/#/?code=t3huofyI",
+            "linkLabel": "直达微风网络官网",
+            "tag": "TOP 4 实用"
+          },
+          {
+            "title": "星岛梦 (XingDaoMeng)",
+            "category": "⭐ TOP 5 老牌不限时 · 不限时不过期 · 优惠码 nmw888",
+            "description": "运营超过 5 年的老牌平稳服务商，最大特色是提供不过期的大流量计费包，适合日常使用频率不高、不愿按月支付月租的轻度用户，买一次长期无忧。",
+            "image": "/assets/images/reviews/xingdaomeng-speedtest.png",
+            "alt": "星岛梦节点测速报告",
+            "link": "https://guangs.xingdaomeng.com/#/?code=1TynBYnR",
+            "linkLabel": "直达星岛梦官网",
+            "tag": "TOP 5 不限时"
+          },
+          {
+            "title": "二猫云 (2MaoYun)",
+            "category": "⭐ TOP 6 均衡首选 · 20元130GB · 优惠码 ermao5555",
+            "description": "专为高频上网用户设计，20元即可获得 130GB 高速专线流量。全节点经过多轮实机测速，晚高峰无卡顿断流现象，对 Telegram 与 YouTube 4K 支持极佳。",
+            "image": "/assets/images/reviews/ermaoyun-speedtest.png",
+            "alt": "二猫云测速报告",
+            "link": "https://guangs.2maoyunaff.cc/#/?code=7mjvgGbW",
+            "linkLabel": "直达二猫云官网",
+            "tag": "TOP 6 均衡"
+          }
+        ],
+        "linkLabel": "查看全部 42 家机场品牌库",
+        "linkHref": "/brands/"
       },
       "nova-services": {
-        "title": "Nasze usługi",
-        "description": "Kompleksowe wsparcie na każdym etapie, od koncepcji po wdrożenie i dalszy rozwój.",
-        "linkLabel": "Zobacz wszystkie",
-        "linkHref": "#uslugi",
+        "eyebrow": "专业评测标准",
+        "heading": "4大硬核测评准则 · 杜绝水分宣传",
+        "description": "我们为什么坚持实机多轮测速？普通测速软件通常只能反映瞬间峰值，而「机场测试」建立了一整套严格的鉴别机制：",
         "items": [
-          { "number": "01.", "icon": "palette", "title": "UX/UI Design", "description": "Nowoczesny i funkcjonalny design dopasowany do Twojej marki. Projektujemy doświadczenia, które są intuicyjne i wspierają cele biznesowe." },
-          { "number": "02.", "icon": "browser", "title": "Strony internetowe", "description": "Szybkie, responsywne i zoptymalizowane rozwiązania dla biznesu. Tworzymy strony, które dobrze wyglądają i skutecznie prowadzą do kontaktu." },
-          { "number": "03.", "icon": "paint-brush", "title": "Identyfikacja wizualna", "description": "Spójny wizerunek, który wyróżnia markę i buduje zaufanie. Łączymy strategię, typografię i detale w jeden rozpoznawalny kierunek." },
-          { "number": "04.", "icon": "lifebuoy", "title": "Wsparcie i rozwój", "description": "Stała opieka i rozwój strony po uruchomieniu projektu. Pomagamy utrzymać stronę aktualną, sprawną i gotową na kolejne etapy." }
-        ]
+          {
+            "number": "01",
+            "title": "晚高峰真并发实测 (20:00 - 22:30)",
+            "description": "所有节点测速均选在国内网络最拥堵的黄金时段进行，重点考核 4K 视频缓冲延迟、丢包率与持续下载速率，而非闲时虚高数据。"
+          },
+          {
+            "number": "02",
+            "title": "真内网专线 (IEPL/IPLC) 真实度校验",
+            "description": "通过多地 MTR 链路追踪、端内握手与 TLS RTT 延迟抖动比对，严格区分昂贵的独立企业内网专线与廉价的公网转发混充。"
+          },
+          {
+            "number": "03",
+            "title": "ChatGPT / Claude / 流媒体原生解锁检测",
+            "description": "实机测试 OpenAI、Claude、Gemini、Netflix 原生 IP 判定，明确标注各机场是全节点解锁还是部分节点可用，绝不含糊带过。"
+          },
+          {
+            "number": "04",
+            "title": "跑路风险与真实退款保障评估",
+            "description": "严查服务商运营年限、工单响应时效、支付通道安全（微信/支付宝/USDT）及套餐周期设置，优先推荐提供月付和永久不过期套餐的服务商。"
+          }
+        ],
+        "linkLabel": "查看全部评测标准",
+        "linkHref": "/#services"
       },
       "nova-team": {
-        "title": "Ludzie, którzy tworzą wartość",
-        "description": "Jesteśmy zespołem specjalistów, którzy łączą pasję do technologii z wyczuciem dobrego designu. Każdy projekt dopasowujemy do marki, jej celów i odbiorców.",
-        "image": "/assets/images/t001-nova/t001-nova-about-team.webp",
-        "imageAlt": "Zespół Nova podczas pracy nad projektem",
-        "checks": ["Strategiczne podejście", "Indywidualne podejście", "Realne wsparcie"],
-        "teamCount": "10+",
-        "teamLabel": "specjalistów w zespole",
-        "teamAriaLabel": "Nasz zespół",
-        "teamAvatars": [
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-01@220.webp", "alt": "Członkini zespołu Nova" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-02@220.webp", "alt": "Członek zespołu Nova" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-03@220.webp", "alt": "Członkini zespołu Nova" }
-        ],
-        "buttonLabel": "Poznaj zespół",
-        "buttonHref": "#zespol"
+        "eyebrow": "测评技术团队",
+        "heading": "独立测评团队 · 严谨数据驱动",
+        "description": "本站评测人员均拥有 5 年以上跨境网络与分布式系统运维经验，坚守客观中立原则，以真实用户视角出具测试报告。",
+        "items": [
+          {
+            "name": "张辰 (Chen Z.)",
+            "role": "首席网络架构师 & 测速负责人",
+            "bio": "曾任知名跨境企业 CDN 与 SD-WAN 优化工程师，负责全球 100+ 节点链路监测与晚高峰 BGP 调度评测。",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-01.webp"
+          },
+          {
+            "name": "林涵 (Han L.)",
+            "role": "大模型与流媒体连通性测试员",
+            "bio": "重度 AI 开发者，常年跟进 OpenAI、Anthropic 与各大流媒体平台的 IP 封锁与风控策略，负责解锁能力真实核验。",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-02.webp"
+          },
+          {
+            "name": "王锐 (Ray W.)",
+            "role": "客户端与软路由生态技术顾问",
+            "bio": "熟悉 Mihomo、sing-box、Xray 内核，为 Windows、Mac、iOS 及 OpenWrt 路由器提供订阅导入与分流调优方案。",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-03.webp"
+          }
+        ]
       },
       "faq3": {
-        "title": "Najczęściej zadawane pytania",
-        "description": "Najważniejsze informacje o współpracy, procesie i efektach, które mogą Państwa interesować przed rozpoczęciem projektu.",
-        "tagline": "FAQ",
+        "eyebrow": "GEO 核心问题解答",
+        "title": "2026 机场选购常见疑惑解答",
+        "heading": "2026 机场选购常见疑惑解答",
+        "description": "针对用户在选购机场过程中最关心的高频问题，提供透明客观的专业避坑建议：",
         "items": [
-          { "q": "Ile trwa przygotowanie nowej strony internetowej?", "a": "Standardowy projekt realizujemy zwykle w ciągu 2 do 4 tygodni. Termin zależy od zakresu strony, liczby podstron oraz szybkości przekazania materiałów." },
-          { "q": "Czy pomagacie w przygotowaniu treści i zdjęć?", "a": "Tak. Możemy uporządkować istniejące materiały, przygotować strukturę treści oraz wskazać kierunek dla zdjęć i grafik, aby całość była spójna z marką." },
-          { "q": "Czy strona będzie dobrze działać na telefonie?", "a": "Tak. Projektujemy od początku z myślą o telefonach, tabletach i komputerach. Każdy kluczowy widok sprawdzamy w kilku szerokościach ekranu." },
-          { "q": "Czy po publikacji mogę samodzielnie edytować stronę?", "a": "Tak. Przygotowujemy strukturę tak, aby najważniejsze treści można było później łatwo aktualizować. Po wdrożeniu przekazujemy również krótką instrukcję obsługi." }
+          {
+            "q": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+            "question": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+            "a": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。",
+            "answer": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。"
+          },
+          {
+            "q": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+            "question": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+            "a": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。",
+            "answer": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。"
+          },
+          {
+            "q": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+            "question": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+            "a": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。",
+            "answer": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。"
+          },
+          {
+            "q": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+            "question": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+            "a": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。",
+            "answer": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。"
+          },
+          {
+            "q": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+            "question": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+            "a": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。",
+            "answer": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。"
+          }
         ]
       },
       "testimonial-v2": {
-        "title": "Opinie, które mówią więcej",
-        "description": "Zobacz, jak współpraca z nami przełożyła się na lepszy wizerunek i wyniki naszych klientów.",
-        "tagline": "Opinie klientów",
-        "avatarAltPrefix": "Zdjęcie",
+        "eyebrow": "真实实测反馈",
+        "heading": "来自跨境出海与技术团队的实测心声",
+        "description": "听听外贸从业者、大模型研究员和海外流媒体发烧友在使用实测推荐节点后的真实评价：",
+        "avatarAltPrefix": "实测用户",
         "items": [
-          { "quote": "Nowa strona uporządkowała naszą komunikację i od pierwszego tygodnia zaczęła przyciągać lepsze zapytania.", "author": "Anna Kowalska", "initials": "AK", "role": "Założycielka marki premium", "avatar": "https://i.pravatar.cc/150?u=anna-kowalska" },
-          { "quote": "Proces był konkretny, sprawny i bardzo dobrze prowadzony. Dostaliśmy stronę, która naprawdę pasuje do naszej marki.", "author": "Michał Nowak", "initials": "MN", "role": "Dyrektor operacyjny", "avatar": "https://i.pravatar.cc/150?u=michal-nowak" },
-          { "quote": "W końcu możemy pokazać nasze realizacje w sposób, który oddaje ich jakość. Klienci od razu to zauważyli.", "author": "Karolina Wójcik", "initials": "KW", "role": "Właścicielka studia", "avatar": "https://i.pravatar.cc/150?u=karolina-wojcik" }
+          {
+            "quote": "换到光速云的 IEPL 专线后，晚高峰远程连海外 GitHub 和拉取 Docker 镜像终于不再断线了，147 永久套餐放备用机上极度安心！",
+            "author": "刘先生 (DevOps 工程师)",
+            "initials": "XL",
+            "role": "跨境电商出海技术负责人",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-01.webp"
+          },
+          {
+            "quote": "做 TikTok 跨境直播最怕跳 ping 和掉线，参考了站长的测速图选了光速云和暮光加速，晚高峰推流全程绿色 0 丢包，效果立竿见影。",
+            "author": "陈女士 (海外运营总监)",
+            "initials": "YC",
+            "role": "TikTok 跨境出海 MCN 机构",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-02.webp"
+          },
+          {
+            "quote": "站长把 42 家机场的真实价格、线路类型和实测测速大图全放出来了，不仅没套路，还有各家最新的优惠码，省去我到处踩坑买垃圾月付的时间。",
+            "author": "赵先生 (资深外贸顾问)",
+            "initials": "RZ",
+            "role": "独立外贸顾问与跨境博主",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-03.webp"
+          }
         ]
       }
     },
     "footer": {
-      "eyebrow": "Twoja marka zasługuje na więcej",
-      "heading": "Zacznijmy tworzyć razem",
-      "description": "Porozmawiajmy o Twoim projekcie i sprawdźmy, jak możemy pomóc w rozwoju Twojej marki.",
-      "primaryLabel": "Skontaktuj się",
-      "primaryHref": "#kontakt",
-      "secondaryLabel": "Poznaj ofertę",
-      "secondaryHref": "#uslugi",
+      "eyebrow": "机场测试 · 2026 权威机场测速指南",
+      "heading": "发现真正适合您的稳定专线节点",
+      "description": "本站所有测速数据与解锁报告均基于实机真实测试采集。推广链接含赞助参数，不会增加您的购买成本。请遵守当地法律法规，仅用于合法的学术科研与跨境商业用途。",
+      "primaryLabel": "查看 42 家机场品牌库",
+      "primaryHref": "/brands/",
+      "secondaryLabel": "客户端配置教程",
+      "secondaryHref": "/clients/",
       "legalLinks": [
-        { "label": "Polityka prywatności", "href": "/polityka-prywatnosci/" },
-        { "label": "Cookies", "href": "/cookies/" }
+        {
+          "label": "隐私保护政策",
+          "href": "/polityka-prywatnosci/"
+        },
+        {
+          "label": "免责与推广声明",
+          "href": "/cookies/"
+        }
       ],
       "footerLinks": [
-        { "label": "O nas", "href": "#zespol" },
-        { "label": "Usługi", "href": "#uslugi" },
-        { "label": "Realizacje", "href": "#realizacje" },
-        { "label": "Opinie", "href": "#opinie" }
+        {
+          "label": "42家品牌评测",
+          "href": "/brands/"
+        },
+        {
+          "label": "客户端大全",
+          "href": "/clients/"
+        },
+        {
+          "label": "万字 FAQ 百科",
+          "href": "/faq/"
+        },
+        {
+          "label": "跑路预警雷达",
+          "href": "/warning/"
+        },
+        {
+          "label": "免费资源箱",
+          "href": "/free/"
+        },
+        {
+          "label": "关于我们",
+          "href": "/about/"
+        },
+        {
+          "label": "榜首光速云",
+          "href": "/#featured"
+        }
       ],
-      "ariaLegal": "Dokumenty prawne",
-      "ariaNavigation": "Nawigacja stopki",
-      "copyright": "Wszelkie prawa zastrzeżone.",
-      "attributionPrefix": "Projekt i wdrożenie: ",
-      "attributionLinkLabel": "WebScale",
-      "attributionLinkHref": "https://webscale.pl"
+      "ariaLegal": "法律声明与政策",
+      "ariaNavigation": "页脚导航",
+      "copyright": "© 2026 机场测试 (jichangcesu.blog) 保留所有权利。",
+      "attributionPrefix": "",
+      "attributionLinkLabel": "",
+      "attributionLinkHref": ""
     }
   },
   "en": {
     "page": {
-      "title": "Nova, websites for ambitious brands",
-      "description": "We create modern websites that strengthen your image, attract clients and support business growth.",
-      "heading": "New possibilities for ambitious brands"
+      "title": "机场测试 - 2026 稳定机场推荐与晚高峰节点测速评测指南",
+      "description": "机场测试 (jichangcesu.blog) 专注于 2026 真实晚高峰节点测速与流媒体/ChatGPT 解锁评测。深度横评光速云、暮光加速、飞猫云等 42 家精选机场，提供透明实测图与全平台客户端下载指引。",
+      "heading": "2026 权威机场测速指南 · 42 家主流机场深度实测"
     },
     "demoBanner": {
-      "label": "This template was designed and built by WebScale.",
-      "downloadLabel": "Download template",
-      "downloadHref": "https://github.com/Wiktorkulas51/template-t001-nova",
-      "customizeLabel": "Request customization",
-      "customizeHref": "https://webscale.pl/?utm_source=nova-demo&utm_medium=banner&utm_campaign=t001-nova-custom"
+      "label": "",
+      "downloadLabel": "",
+      "downloadHref": "",
+      "customizeLabel": "",
+      "customizeHref": ""
     },
     "navigation": {
       "menu": [
-        { "label": "About us", "href": "#zespol" },
-        { "label": "Services", "href": "#services" },
-        { "label": "Selected work", "href": "#realizacje" },
-        { "label": "Reviews", "href": "#opinie" }
+        {
+          "label": "42家品牌评测",
+          "href": "/brands/"
+        },
+        {
+          "label": "客户端大全",
+          "href": "/clients/"
+        },
+        {
+          "label": "万字 FAQ",
+          "href": "/faq/"
+        },
+        {
+          "label": "跑路预警雷达",
+          "href": "/warning/"
+        },
+        {
+          "label": "免费资源箱",
+          "href": "/free/"
+        },
+        {
+          "label": "榜首主推",
+          "href": "/#featured"
+        }
       ],
       "cta": {
-        "label": "Start a project",
-        "hoverLabel": "Let's talk",
-        "href": "#contact"
+        "label": "主推：光速云（优惠码 AMM）",
+        "hoverLabel": "直达官网（9折优惠）",
+        "href": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
       },
       "aria": {
-        "menuOpen": "Open navigation menu",
-        "menuClose": "Close menu",
-        "menuExpand": "Expand submenu",
-        "navMain": "Main navigation",
-        "drawer": "Navigation menu"
+        "menuOpen": "打开导航菜单",
+        "menuClose": "关闭导航菜单",
+        "menuExpand": "展开子菜单",
+        "navMain": "主导航",
+        "drawer": "导航抽屉"
       },
-      "languageLabel": "Choose language"
+      "languageLabel": "语言"
     },
     "sections": {
       "nova-hero-wireframe": {
-        "eyebrow": "STRATEGY / DESIGN / TECHNOLOGY",
-        "heading": "New possibilities for",
-        "headingAccent": "ambitious brands",
-        "description": "We create modern websites that strengthen your image, attract clients and turn your business goals into real growth.",
-        "primaryCTA": { "label": "Start a project", "href": "#contact" },
-        "secondaryCTA": { "label": "Meet the team", "href": "#zespol" },
-        "trustedBy": "Trusted by",
-        "trustItems": ["MODO", "LUMI", "KOVO", "NOMA", "ASPEKT"],
-        "image": "/assets/images/t001-nova/t001-nova-hero.webp",
-        "imageAlt": "Strategist working at a laptop",
+        "eyebrow": "2026 权威机场实测指南 · 晚高峰真实测速",
+        "heading": "42家主流机场真测速",
+        "headingAccent": "好节点拒绝虚标套壳",
+        "description": "拒绝劣质中转冒充内网专线。基于晚高峰高并发网络环境，深度横评光速云、暮光加速、飞猫云等 42 家主流机场，全节点真实延迟、4K 视频流码率、ChatGPT 与流媒体解锁真实可见，助你轻松选出不卡顿的高性价比梯子。",
+        "primaryCTA": {
+          "label": "光速云独家特惠（优惠码 AMM）",
+          "href": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
+        },
+        "secondaryCTA": {
+          "label": "查阅 42 家品牌对比库",
+          "href": "/brands/"
+        },
+        "trustedBy": "晚高峰延迟实测标杆（光速云样本）",
+        "trustItems": [
+          "香港 22ms",
+          "新加坡 46ms",
+          "日本 57ms",
+          "台湾 41ms",
+          "美国 143ms"
+        ],
+        "image": "/assets/images/reviews/guangsu-speedtest.png",
+        "imageAlt": "光速云 2026 真实节点测速面板",
         "stats": [
-          { "value": "2000+", "label": "Projects delivered" },
-          { "value": "10+", "label": "Years of experience" },
-          { "value": "800+", "label": "Product hours" },
-          { "value": "150M+", "label": "Client revenue generated" }
+          {
+            "value": "42+",
+            "label": "收录实测品牌"
+          },
+          {
+            "value": "17+",
+            "label": "全节点测速大图"
+          },
+          {
+            "value": "100%",
+            "label": "晚高峰真实样本"
+          },
+          {
+            "value": "0",
+            "label": "虚假跑路推广"
+          }
         ]
       },
       "nova-projects": {
-        "title": "Turning ideas into real outcomes",
-        "description": "We combine strategic thinking, refined design and modern technology to create websites that look great and deliver measurable value.",
-        "linkLabel": "See selected work",
-        "linkHref": "#realizacje",
+        "eyebrow": "TOP 10 核心推荐梯队",
+        "heading": "2026 精选梯队实测榜单",
+        "description": "基于线路稳定性、晚高峰带宽冗余、流媒体与 AI 工具解锁完整度、客服响应及跑路风险综合评估。榜首主推光速云，搭配暮光、飞猫等高性价比梯队。",
+        "viewAllLabel": "查看全部 42 家机场品牌库",
+        "viewAllHref": "/brands/",
         "items": [
-          { "category": "Websites", "title": "A premium brand with a new website", "image": "/assets/images/t001-nova/t001-nova-project-laptop.webp", "alt": "Laptop showing a website project" },
-          { "category": "Brand identity", "title": "A new identity for an ambitious brand", "image": "/assets/images/t001-nova/t001-nova-project-building.webp", "alt": "Modern building used as a project example" }
-        ]
+          {
+            "title": "光速云 (GSY Cloud)",
+            "category": "⭐ 榜首第一力荐 · 斯诺克147永久套餐 · 优惠码 AMM",
+            "description": "2020年稳定运营至今。独创 IEPL 专线与企业级内网双线路架构，单节点最高 2.5Gbps 带宽。特设 147 元 247GB 永久不限期套餐（无过期风险）与 99 元/年（69GB/月）入门版。晚高峰香港实测 22ms、下载 529Mbps，完美支持 Claude、Netflix、Disney+、TikTok。",
+            "image": "/assets/images/reviews/guangsu-speedtest.png",
+            "alt": "光速云测速大图",
+            "link": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y",
+            "linkLabel": "直达光速云官网",
+            "tag": "榜首第一主推"
+          },
+          {
+            "title": "暮光加速 (Twilight)",
+            "category": "⭐ TOP 2 稳定梯队 · BGP智能调度 · 优惠码 muguang5555",
+            "description": "2023年上线运营，20元/月 120GB 流量档。主打 BGP 智能调度系统与低延迟专线出口，晚高峰抗波动能力出众，三网自动路由最优端内转发，适合对延迟敏感的游戏加速与视频创作人员。",
+            "image": "/assets/images/reviews/muguang-speedtest.png",
+            "alt": "暮光加速测速报告",
+            "link": "https://varnexa.twilightaff.com/#/?code=D1LHglg3",
+            "linkLabel": "直达暮光加速官网",
+            "tag": "TOP 2 精选"
+          },
+          {
+            "title": "飞猫云 (FlyCat)",
+            "category": "⭐ TOP 3 性价比 · 7元超低门槛 · 8折优惠码 flycat888",
+            "description": "低门槛性价比代表，7元档搭配 8 折优惠码后极具价格诱惑力。实测节点覆盖亚洲主流地区，下载速率实测突破 86 MB/s，适合预算有限、轻度查资料与学术科研的学生及尝鲜群体。",
+            "image": "/assets/images/reviews/feimao-speedtest.png",
+            "alt": "飞猫云测速大图",
+            "link": "https://guangs.flycataff.com/#/?code=6uq0Xe9y",
+            "linkLabel": "直达飞猫云官网",
+            "tag": "TOP 3 性价比"
+          },
+          {
+            "title": "微风网络 (BreezeNet)",
+            "category": "⭐ TOP 4 实用专线 · 7元超值档 · 9折优惠码 flat888",
+            "description": "主打大带宽传输与多媒体下载，7元档配合折扣码入手极划算。实测支持主流流媒体解锁，节点响应迅速，后台管理简洁直观，是兼顾价格与日常流畅度的实用之选。",
+            "image": "/assets/images/reviews/weifeng-speedtest.png",
+            "alt": "微风网络测速报告",
+            "link": "https://edp01.breezenetaff.com/#/?code=t3huofyI",
+            "linkLabel": "直达微风网络官网",
+            "tag": "TOP 4 实用"
+          },
+          {
+            "title": "星岛梦 (XingDaoMeng)",
+            "category": "⭐ TOP 5 老牌不限时 · 不限时不过期 · 优惠码 nmw888",
+            "description": "运营超过 5 年的老牌平稳服务商，最大特色是提供不过期的大流量计费包，适合日常使用频率不高、不愿按月支付月租的轻度用户，买一次长期无忧。",
+            "image": "/assets/images/reviews/xingdaomeng-speedtest.png",
+            "alt": "星岛梦节点测速报告",
+            "link": "https://guangs.xingdaomeng.com/#/?code=1TynBYnR",
+            "linkLabel": "直达星岛梦官网",
+            "tag": "TOP 5 不限时"
+          },
+          {
+            "title": "二猫云 (2MaoYun)",
+            "category": "⭐ TOP 6 均衡首选 · 20元130GB · 优惠码 ermao5555",
+            "description": "专为高频上网用户设计，20元即可获得 130GB 高速专线流量。全节点经过多轮实机测速，晚高峰无卡顿断流现象，对 Telegram 与 YouTube 4K 支持极佳。",
+            "image": "/assets/images/reviews/ermaoyun-speedtest.png",
+            "alt": "二猫云测速报告",
+            "link": "https://guangs.2maoyunaff.cc/#/?code=7mjvgGbW",
+            "linkLabel": "直达二猫云官网",
+            "tag": "TOP 6 均衡"
+          }
+        ],
+        "linkLabel": "查看全部 42 家机场品牌库",
+        "linkHref": "/brands/"
       },
       "nova-services": {
-        "title": "Our services",
-        "description": "End-to-end support, from the first concept to launch and continued growth.",
-        "linkLabel": "Explore our services",
-        "linkHref": "#services",
+        "eyebrow": "专业评测标准",
+        "heading": "4大硬核测评准则 · 杜绝水分宣传",
+        "description": "我们为什么坚持实机多轮测速？普通测速软件通常只能反映瞬间峰值，而「机场测试」建立了一整套严格的鉴别机制：",
         "items": [
-          { "number": "01.", "icon": "palette", "title": "UX/UI design", "description": "Modern and functional design tailored to your brand. We create experiences that feel intuitive and support business goals." },
-          { "number": "02.", "icon": "browser", "title": "Websites", "description": "Fast, responsive and conversion-focused websites for modern businesses. Every screen has a clear purpose." },
-          { "number": "03.", "icon": "paint-brush", "title": "Brand identity", "description": "A consistent visual identity that helps your brand stand out and build trust through strategy, type and detail." },
-          { "number": "04.", "icon": "lifebuoy", "title": "Support and growth", "description": "Ongoing support after launch. We help keep your website current, reliable and ready for the next stage." }
-        ]
+          {
+            "number": "01",
+            "title": "晚高峰真并发实测 (20:00 - 22:30)",
+            "description": "所有节点测速均选在国内网络最拥堵的黄金时段进行，重点考核 4K 视频缓冲延迟、丢包率与持续下载速率，而非闲时虚高数据。"
+          },
+          {
+            "number": "02",
+            "title": "真内网专线 (IEPL/IPLC) 真实度校验",
+            "description": "通过多地 MTR 链路追踪、端内握手与 TLS RTT 延迟抖动比对，严格区分昂贵的独立企业内网专线与廉价的公网转发混充。"
+          },
+          {
+            "number": "03",
+            "title": "ChatGPT / Claude / 流媒体原生解锁检测",
+            "description": "实机测试 OpenAI、Claude、Gemini、Netflix 原生 IP 判定，明确标注各机场是全节点解锁还是部分节点可用，绝不含糊带过。"
+          },
+          {
+            "number": "04",
+            "title": "跑路风险与真实退款保障评估",
+            "description": "严查服务商运营年限、工单响应时效、支付通道安全（微信/支付宝/USDT）及套餐周期设置，优先推荐提供月付和永久不过期套餐的服务商。"
+          }
+        ],
+        "linkLabel": "查看全部评测标准",
+        "linkHref": "/#services"
       },
       "nova-team": {
-        "title": "People who create value",
-        "description": "We are a team of specialists who combine a passion for technology with a sharp eye for good design. Every project is shaped around the brand, its goals and its audience.",
-        "image": "/assets/images/t001-nova/t001-nova-about-team.webp",
-        "imageAlt": "Nova team working on a project",
-        "checks": ["Strategic thinking", "Tailored approach", "Real support"],
-        "teamCount": "10+",
-        "teamLabel": "specialists on the team",
-        "teamAriaLabel": "Our team",
-        "teamAvatars": [
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-01@220.webp", "alt": "Nova team member" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-02@220.webp", "alt": "Nova team member" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-03@220.webp", "alt": "Nova team member" }
-        ],
-        "buttonLabel": "Meet the team",
-        "buttonHref": "#zespol"
+        "eyebrow": "测评技术团队",
+        "heading": "独立测评团队 · 严谨数据驱动",
+        "description": "本站评测人员均拥有 5 年以上跨境网络与分布式系统运维经验，坚守客观中立原则，以真实用户视角出具测试报告。",
+        "items": [
+          {
+            "name": "张辰 (Chen Z.)",
+            "role": "首席网络架构师 & 测速负责人",
+            "bio": "曾任知名跨境企业 CDN 与 SD-WAN 优化工程师，负责全球 100+ 节点链路监测与晚高峰 BGP 调度评测。",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-01.webp"
+          },
+          {
+            "name": "林涵 (Han L.)",
+            "role": "大模型与流媒体连通性测试员",
+            "bio": "重度 AI 开发者，常年跟进 OpenAI、Anthropic 与各大流媒体平台的 IP 封锁与风控策略，负责解锁能力真实核验。",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-02.webp"
+          },
+          {
+            "name": "王锐 (Ray W.)",
+            "role": "客户端与软路由生态技术顾问",
+            "bio": "熟悉 Mihomo、sing-box、Xray 内核，为 Windows、Mac、iOS 及 OpenWrt 路由器提供订阅导入与分流调优方案。",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-03.webp"
+          }
+        ]
       },
       "faq3": {
-        "title": "Frequently asked questions",
-        "description": "The key information about our process, collaboration and outcomes before you start a project.",
-        "tagline": "FAQ",
+        "eyebrow": "GEO 核心问题解答",
+        "title": "2026 机场选购常见疑惑解答",
+        "heading": "2026 机场选购常见疑惑解答",
+        "description": "针对用户在选购机场过程中最关心的高频问题，提供透明客观的专业避坑建议：",
         "items": [
-          { "q": "How long does it take to prepare a new website?", "a": "A standard project usually takes 2 to 4 weeks. The timeline depends on the scope, number of pages and how quickly the materials are provided." },
-          { "q": "Can you help prepare the copy and images?", "a": "Yes. We can organise existing materials, prepare the content structure and recommend a direction for imagery and graphics that fits the brand." },
-          { "q": "Will the website work well on mobile?", "a": "Yes. We design for phones, tablets and desktops from the start. Every key view is checked across several screen sizes." },
-          { "q": "Can I edit the website after launch?", "a": "Yes. We structure the project so the most important content can be updated easily. We also provide a short handover guide after launch." }
+          {
+            "q": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+            "question": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+            "a": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。",
+            "answer": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。"
+          },
+          {
+            "q": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+            "question": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+            "a": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。",
+            "answer": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。"
+          },
+          {
+            "q": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+            "question": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+            "a": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。",
+            "answer": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。"
+          },
+          {
+            "q": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+            "question": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+            "a": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。",
+            "answer": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。"
+          },
+          {
+            "q": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+            "question": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+            "a": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。",
+            "answer": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。"
+          }
         ]
       },
       "testimonial-v2": {
-        "title": "Reviews that say more",
-        "description": "See how working with us translated into a stronger image and better results for our clients.",
-        "tagline": "Client reviews",
-        "avatarAltPrefix": "Photo of",
+        "eyebrow": "真实实测反馈",
+        "heading": "来自跨境出海与技术团队的实测心声",
+        "description": "听听外贸从业者、大模型研究员和海外流媒体发烧友在使用实测推荐节点后的真实评价：",
+        "avatarAltPrefix": "实测用户",
         "items": [
-          { "quote": "The new website finally gave our communication a clear structure and started bringing better enquiries from the first week.", "author": "Anna Kowalska", "initials": "AK", "role": "Founder of a premium brand", "avatar": "https://i.pravatar.cc/150?u=anna-kowalska" },
-          { "quote": "The process was focused, efficient and very well guided. We received a website that genuinely fits our brand.", "author": "Michal Nowak", "initials": "MN", "role": "Operations director", "avatar": "https://i.pravatar.cc/150?u=michal-nowak" },
-          { "quote": "We can finally present our work in a way that reflects its quality. Clients noticed the difference straight away.", "author": "Karolina Wojcik", "initials": "KW", "role": "Studio owner", "avatar": "https://i.pravatar.cc/150?u=karolina-wojcik" }
+          {
+            "quote": "换到光速云的 IEPL 专线后，晚高峰远程连海外 GitHub 和拉取 Docker 镜像终于不再断线了，147 永久套餐放备用机上极度安心！",
+            "author": "刘先生 (DevOps 工程师)",
+            "initials": "XL",
+            "role": "跨境电商出海技术负责人",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-01.webp"
+          },
+          {
+            "quote": "做 TikTok 跨境直播最怕跳 ping 和掉线，参考了站长的测速图选了光速云和暮光加速，晚高峰推流全程绿色 0 丢包，效果立竿见影。",
+            "author": "陈女士 (海外运营总监)",
+            "initials": "YC",
+            "role": "TikTok 跨境出海 MCN 机构",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-02.webp"
+          },
+          {
+            "quote": "站长把 42 家机场的真实价格、线路类型和实测测速大图全放出来了，不仅没套路，还有各家最新的优惠码，省去我到处踩坑买垃圾月付的时间。",
+            "author": "赵先生 (资深外贸顾问)",
+            "initials": "RZ",
+            "role": "独立外贸顾问与跨境博主",
+            "avatar": "/assets/images/t001-nova/t001-nova-avatar-03.webp"
+          }
         ]
       }
     },
     "footer": {
-      "eyebrow": "Your brand deserves more",
-      "heading": "Let's create together",
-      "description": "Tell us about your project and let's see how we can help your brand grow.",
-      "primaryLabel": "Get in touch",
-      "primaryHref": "#contact",
-      "secondaryLabel": "Explore services",
-      "secondaryHref": "#services",
+      "eyebrow": "机场测试 · 2026 权威机场测速指南",
+      "heading": "发现真正适合您的稳定专线节点",
+      "description": "本站所有测速数据与解锁报告均基于实机真实测试采集。推广链接含赞助参数，不会增加您的购买成本。请遵守当地法律法规，仅用于合法的学术科研与跨境商业用途。",
+      "primaryLabel": "查看 42 家机场品牌库",
+      "primaryHref": "/brands/",
+      "secondaryLabel": "客户端配置教程",
+      "secondaryHref": "/clients/",
       "legalLinks": [
-        { "label": "Privacy policy", "href": "/polityka-prywatnosci/" },
-        { "label": "Cookies", "href": "/cookies/" }
+        {
+          "label": "隐私保护政策",
+          "href": "/polityka-prywatnosci/"
+        },
+        {
+          "label": "免责与推广声明",
+          "href": "/cookies/"
+        }
       ],
       "footerLinks": [
-        { "label": "About us", "href": "#zespol" },
-        { "label": "Services", "href": "#services" },
-        { "label": "Selected work", "href": "#realizacje" },
-        { "label": "Reviews", "href": "#opinie" }
+        {
+          "label": "42家品牌评测",
+          "href": "/brands/"
+        },
+        {
+          "label": "客户端大全",
+          "href": "/clients/"
+        },
+        {
+          "label": "万字 FAQ 百科",
+          "href": "/faq/"
+        },
+        {
+          "label": "跑路预警雷达",
+          "href": "/warning/"
+        },
+        {
+          "label": "免费资源箱",
+          "href": "/free/"
+        },
+        {
+          "label": "关于我们",
+          "href": "/about/"
+        },
+        {
+          "label": "榜首光速云",
+          "href": "/#featured"
+        }
       ],
-      "ariaLegal": "Legal documents",
-      "ariaNavigation": "Footer navigation",
-      "copyright": "All rights reserved.",
-      "attributionPrefix": "Design and development by ",
-      "attributionLinkLabel": "WebScale",
-      "attributionLinkHref": "https://webscale.pl"
+      "ariaLegal": "法律声明与政策",
+      "ariaNavigation": "页脚导航",
+      "copyright": "© 2026 机场测试 (jichangcesu.blog) 保留所有权利。",
+      "attributionPrefix": "",
+      "attributionLinkLabel": "",
+      "attributionLinkHref": ""
     }
   }
 }

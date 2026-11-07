@@ -155,6 +155,8 @@ function subId(index: number): string {
 					<div class="ui-nav-drawer__item" style={`--stagger: ${menu.length}`}>
 						<a
 							href={getNovaNavigationPath(headerData.cta.href, locale)}
+							target={headerData.cta.href.startsWith("http") ? "_blank" : undefined}
+							rel={headerData.cta.href.startsWith("http") ? "nofollow sponsored noopener" : undefined}
 							class="ui-nav-drawer__cta"
 							data-navbar-close
 						>

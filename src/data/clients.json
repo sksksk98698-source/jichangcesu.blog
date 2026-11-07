@@ -1,0 +1,288 @@
+[
+  {
+    "platform": "Windows 电脑客户端",
+    "description": "客户端名称\t主要特点\t下载或项目地址\r",
+    "items": [
+      {
+        "name": "Clash Verge Rev",
+        "features": "Mihomo 内核、订阅管理、规则分流、TUN 模式，新手及进阶用户",
+        "source": "GitHub"
+      },
+      {
+        "name": "v2rayN",
+        "features": "Xray、sing-box 等核心，适合多协议和节点管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "FlClash",
+        "features": "Mihomo 内核、规则分流、简洁界面",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Nyanpasu",
+        "features": "Clash 图形界面、配置增强、多内核",
+        "source": "GitHub"
+      },
+      {
+        "name": "Hiddify",
+        "features": "多协议、自动节点选择、远程配置",
+        "source": "GitHub"
+      },
+      {
+        "name": "Karing",
+        "features": "sing-box 系客户端、跨平台、面向新手的配置方式",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Mi",
+        "features": "Mihomo 内核、多平台、Clash YAML 配置",
+        "source": "GitHub"
+      },
+      {
+        "name": "Mihomo Party",
+        "features": "Mihomo 内核、配置与分流管理，适合历史教程和迁移场景",
+        "source": "GitHub"
+      }
+    ]
+  },
+  {
+    "platform": "Android 安卓客户端",
+    "description": "客户端名称\t主要特点\t下载或项目地址\r",
+    "items": [
+      {
+        "name": "v2rayNG",
+        "features": "Xray 系协议客户端，支持节点链接和订阅导入",
+        "source": "GitHub"
+      },
+      {
+        "name": "FlClash",
+        "features": "Mihomo 内核、规则分流、支持订阅配置",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Meta for Android",
+        "features": "Mihomo 系规则代理，支持 Clash 配置",
+        "source": "GitHub"
+      },
+      {
+        "name": "NekoBox for Android",
+        "features": "sing-box 系客户端，适合有一定基础的用户",
+        "source": "GitHub"
+      },
+      {
+        "name": "sing-box for Android（SFA）",
+        "features": "官方 sing-box 客户端，适合原生 sing-box 配置",
+        "source": "官方文档"
+      },
+      {
+        "name": "Hiddify",
+        "features": "多协议、多种订阅格式，适合新手",
+        "source": "GitHub"
+      },
+      {
+        "name": "Karing",
+        "features": "sing-box 系客户端，支持多订阅与规则管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Mi",
+        "features": "Mihomo 内核、Clash YAML 配置、跨平台",
+        "source": "GitHub"
+      }
+    ]
+  },
+  {
+    "platform": "iPhone / iPad 客户端",
+    "description": "客户端名称\t主要特点\t下载地址\r",
+    "items": [
+      {
+        "name": "Shadowrocket（小火箭）",
+        "features": "规则代理、订阅管理、流量与请求查看",
+        "source": "App Store"
+      },
+      {
+        "name": "Stash",
+        "features": "Clash 风格规则配置、策略组、覆写功能",
+        "source": "App Store"
+      },
+      {
+        "name": "Quantumult X（圈 X）",
+        "features": "规则分流、请求重写、脚本、DNS 自定义",
+        "source": "App Store"
+      },
+      {
+        "name": "Surge 5",
+        "features": "高级网络代理、流量分析与调试",
+        "source": "App Store"
+      },
+      {
+        "name": "sing-box（SFI）",
+        "features": "官方 sing-box 客户端，适合原生配置",
+        "source": "官方文档"
+      },
+      {
+        "name": "Hiddify",
+        "features": "多协议代理、导入订阅、新手友好",
+        "source": "GitHub"
+      },
+      {
+        "name": "Karing",
+        "features": "多种订阅格式、规则分流、跨设备使用",
+        "source": "App Store"
+      },
+      {
+        "name": "Clash Mi",
+        "features": "Mihomo 内核、支持 Clash 风格配置",
+        "source": "App Store"
+      },
+      {
+        "name": "Streisand",
+        "features": "VLESS、VMess、Trojan、Hysteria 等协议",
+        "source": "App Store"
+      },
+      {
+        "name": "Potatso",
+        "features": "Shadowsocks、SSR、SOCKS、HTTP(S)",
+        "source": "App Store"
+      },
+      {
+        "name": "OneClick",
+        "features": "VMess、Shadowsocks、Trojan 和订阅链接",
+        "source": "App Store"
+      }
+    ]
+  },
+  {
+    "platform": "macOS 苹果电脑客户端",
+    "description": "客户端名称\t主要特点\t下载或项目地址\r",
+    "items": [
+      {
+        "name": "Clash Verge Rev",
+        "features": "Mihomo、规则分流、TUN 模式",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Nyanpasu",
+        "features": "多内核、订阅和配置管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "FlClash",
+        "features": "Mihomo、订阅配置、规则管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "v2rayN",
+        "features": "Xray、sing-box 等多核心",
+        "source": "GitHub"
+      },
+      {
+        "name": "Hiddify",
+        "features": "多协议、自动选点、订阅管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "Karing",
+        "features": "跨平台订阅与路由管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Mi",
+        "features": "Mihomo 图形界面",
+        "source": "GitHub"
+      },
+      {
+        "name": "Surge Mac",
+        "features": "高级网络代理、规则控制、网络调试",
+        "source": "官网"
+      },
+      {
+        "name": "sing-box for macOS（SFM）",
+        "features": "官方 sing-box 客户端",
+        "source": "官方文档"
+      }
+    ]
+  },
+  {
+    "platform": "Linux 客户端",
+    "description": "客户端名称\t主要特点\t下载或项目地址\r",
+    "items": [
+      {
+        "name": "Clash Verge Rev",
+        "features": "桌面图形界面、Mihomo、规则分流",
+        "source": "GitHub"
+      },
+      {
+        "name": "v2rayN",
+        "features": "Xray 等多核心桌面客户端",
+        "source": "GitHub"
+      },
+      {
+        "name": "FlClash",
+        "features": "Mihomo、规则代理、多种 Linux 安装包",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Nyanpasu",
+        "features": "多核心与配置管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "Hiddify",
+        "features": "多协议订阅客户端",
+        "source": "GitHub"
+      },
+      {
+        "name": "Karing",
+        "features": "sing-box 系跨平台客户端",
+        "source": "GitHub"
+      },
+      {
+        "name": "Clash Mi",
+        "features": "Mihomo 图形客户端",
+        "source": "GitHub"
+      },
+      {
+        "name": "v2rayA",
+        "features": "Web 控制界面、透明代理、适合 Linux 主机或服务器",
+        "source": "GitHub"
+      },
+      {
+        "name": "sing-box for Desktop",
+        "features": "官方 sing-box 桌面客户端方向",
+        "source": "官方文档"
+      }
+    ]
+  },
+  {
+    "platform": "OpenWrt / 软路由客户端",
+    "description": "客户端名称\t核心定位\t项目地址\r",
+    "items": [
+      {
+        "name": "OpenClash",
+        "features": "Mihomo/Clash 系规则代理、订阅管理、透明代理",
+        "source": "GitHub"
+      },
+      {
+        "name": "PassWall2",
+        "features": "Xray、sing-box 等核心，支持节点、透明代理和访问控制",
+        "source": "GitHub"
+      },
+      {
+        "name": "Nikki",
+        "features": "Mihomo 透明代理与策略管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "HomeProxy",
+        "features": "基于 sing-box 的路由代理管理",
+        "source": "GitHub"
+      },
+      {
+        "name": "v2rayA",
+        "features": "可用于部分 Linux 路由与网关环境",
+        "source": "GitHub"
+      }
+    ]
+  }
+]

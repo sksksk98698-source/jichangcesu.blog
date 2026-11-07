@@ -1,0 +1,279 @@
+import fs from 'node:fs';
+
+const novaData = {
+  "pl": {},
+  "en": {}
+};
+
+const cnContent = {
+  "page": {
+    "title": "机场测试 - 2026 稳定机场推荐与晚高峰节点测速评测指南",
+    "description": "机场测试 (jichangcesu.blog) 专注于 2026 真实晚高峰节点测速与流媒体/ChatGPT 解锁评测。深度横评光速云、暮光加速、飞猫云等 42 家精选机场，提供透明实测图与全平台客户端下载指引。",
+    "heading": "2026 权威机场测速指南 · 42 家主流机场深度实测"
+  },
+  "demoBanner": {
+    "label": "",
+    "downloadLabel": "",
+    "downloadHref": "",
+    "customizeLabel": "",
+    "customizeHref": ""
+  },
+  "navigation": {
+    "menu": [
+      { "label": "榜首主推", "href": "#featured" },
+      { "label": "TOP 10 实测梯队", "href": "#top10" },
+      { "label": "42家全量品牌库", "href": "/brands/" },
+      { "label": "客户端大全", "href": "/clients/" },
+      { "label": "评测标准", "href": "#services" },
+      { "label": "GEO 问答", "href": "#faq" }
+    ],
+    "cta": {
+      "label": "主推：光速云（优惠码 AMM）",
+      "hoverLabel": "直达官网（9折优惠）",
+      "href": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
+    },
+    "aria": {
+      "menuOpen": "打开导航菜单",
+      "menuClose": "关闭导航菜单",
+      "menuExpand": "展开子菜单",
+      "navMain": "主导航",
+      "drawer": "导航抽屉"
+    },
+    "languageLabel": "语言"
+  },
+  "sections": {
+    "nova-hero-wireframe": {
+      "eyebrow": "2026 权威机场实测指南 · 晚高峰真实测速",
+      "heading": "42家主流机场真测速",
+      "headingAccent": "好节点拒绝虚标套壳",
+      "description": "拒绝劣质中转冒充内网专线。基于晚高峰高并发网络环境，深度横评光速云、暮光加速、飞猫云等 42 家主流机场，全节点真实延迟、4K 视频流码率、ChatGPT 与流媒体解锁真实可见，助你轻松选出不卡顿的高性价比梯子。",
+      "primaryCTA": {
+        "label": "光速云独家特惠（优惠码 AMM）",
+        "href": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
+      },
+      "secondaryCTA": {
+        "label": "查阅 42 家品牌对比库",
+        "href": "/brands/"
+      },
+      "trustedBy": "晚高峰延迟实测标杆（光速云样本）",
+      "trustItems": ["香港 22ms", "新加坡 46ms", "日本 57ms", "台湾 41ms", "美国 143ms"],
+      "image": "/assets/images/reviews/光速云-节点测速实测.png",
+      "imageAlt": "光速云 2026 真实节点测速面板",
+      "stats": [
+        { "value": "42+", "label": "收录实测品牌" },
+        { "value": "17+", "label": "全节点测速大图" },
+        { "value": "100%", "label": "晚高峰真实样本" },
+        { "value": "0", "label": "虚假跑路推广" }
+      ]
+    },
+    "nova-projects": {
+      "eyebrow": "TOP 10 核心推荐梯队",
+      "heading": "2026 精选梯队实测榜单",
+      "description": "基于线路稳定性、晚高峰带宽冗余、流媒体与 AI 工具解锁完整度、客服响应及跑路风险综合评估。榜首主推光速云，搭配暮光、飞猫等高性价比梯队。",
+      "viewAllLabel": "查看全部 42 家机场品牌库",
+      "viewAllHref": "/brands/",
+      "items": [
+        {
+          "title": "光速云 (GSY Cloud) · 榜首力荐",
+          "category": "IEPL企业专线 / 斯诺克147永久套餐 / 优惠码 AMM",
+          "description": "2020年稳定运营至今。独创 IEPL 专线与企业级内网双线路架构，单节点最高 2.5Gbps 带宽。特设 147 元 247GB 永久不限期套餐（无过期风险）与 99 元/年（69GB/月）入门版。晚高峰香港实测 22ms、下载 529Mbps，完美支持 Claude、Netflix、Disney+、TikTok。",
+          "image": "/assets/images/reviews/光速云-节点测速实测.png",
+          "imageAlt": "光速云测速大图",
+          "link": "https://sahude.gsyvipaff.com/#/?code=keqgvT5Y",
+          "linkLabel": "直达光速云官网",
+          "tag": "榜首第一主推"
+        },
+        {
+          "title": "暮光加速 (Twilight) · 稳定第二名",
+          "category": "BGP智能调度 / 专线级出口 / 优惠码 muguang5555",
+          "description": "2023年上线运营，20元/月 120GB 流量档。主打 BGP 智能调度系统与低延迟专线出口，晚高峰抗波动能力出众，三网自动路由最优端内转发，适合对延迟敏感的游戏加速与视频创作人员。",
+          "image": "/assets/images/reviews/幕光加速-节点测速实测.png",
+          "imageAlt": "暮光加速测速报告",
+          "link": "https://varnexa.twilightaff.com/#/?code=D1LHglg3",
+          "linkLabel": "直达暮光加速官网",
+          "tag": "TOP 2 精选"
+        },
+        {
+          "title": "飞猫云 (FlyCat) · 7元超低门槛",
+          "category": "超低入门尝鲜 / 优惠码 flycat888 (8折优惠)",
+          "description": "低门槛性价比代表，7元档搭配 8 折优惠码后极具价格诱惑力。实测节点覆盖亚洲主流地区，下载速率实测突破 86 MB/s，适合预算有限、轻度查资料与学术科研的学生及尝鲜群体。",
+          "image": "/assets/images/reviews/飞猫云-节点测速实测.png",
+          "imageAlt": "飞猫云测速大图",
+          "link": "https://guangs.flycataff.com/#/?code=6uq0Xe9y",
+          "linkLabel": "直达飞猫云官网",
+          "tag": "TOP 3 性价比"
+        },
+        {
+          "title": "微风网络 (BreezeNet) · 高速大流量",
+          "category": "7元档位 / 优惠码 flat888 (9折优惠)",
+          "description": "主打大带宽传输与多媒体下载，7元档配合折扣码入手极划算。实测支持主流流媒体解锁，节点响应迅速，后台管理简洁直观，是兼顾价格与日常流畅度的实用之选。",
+          "image": "/assets/images/reviews/微风-节点测速实测.png",
+          "imageAlt": "微风网络测速报告",
+          "link": "https://edp01.breezenetaff.com/#/?code=t3huofyI",
+          "linkLabel": "直达微风网络官网",
+          "tag": "TOP 4 实用"
+        },
+        {
+          "title": "星岛梦 · 2020老牌不限时套餐",
+          "category": "2020年老牌 / 不限时不过期套餐 / 优惠码 nmw888",
+          "description": "运营超过 5 年的老牌平稳服务商，最大特色是提供不过期的大流量计费包，适合日常使用频率不高、不愿按月支付月租的轻度用户，买一次长期无忧。",
+          "image": "/assets/images/reviews/星岛梦-节点测速实测.png",
+          "imageAlt": "星岛梦节点测速报告",
+          "link": "https://guangs.xingdaomeng.com/#/?code=1TynBYnR",
+          "linkLabel": "直达星岛梦官网",
+          "tag": "TOP 5 不限时"
+        },
+        {
+          "title": "二猫云 (2MaoYun) · 20元130GB均衡版",
+          "category": "高配大流量 / 优惠码 ermao5555",
+          "description": "专为高频上网用户设计，20元即可获得 130GB 高速专线流量。全节点经过多轮实机测速，晚高峰无卡顿断流现象，对 Telegram 与 YouTube 4K 支持极佳。",
+          "image": "/assets/images/reviews/二猫云-节点测速实测.png",
+          "imageAlt": "二猫云测速报告",
+          "link": "https://guangs.2maoyunaff.cc/#/?code=7mjvgGbW",
+          "linkLabel": "直达二猫云官网",
+          "tag": "TOP 6 均衡"
+        }
+      ]
+    },
+    "nova-services": {
+      "eyebrow": "专业评测标准",
+      "heading": "4大硬核测评准则 · 杜绝水分宣传",
+      "description": "我们为什么坚持实机多轮测速？普通测速软件通常只能反映瞬间峰值，而「机场测试」建立了一整套严格的鉴别机制：",
+      "items": [
+        {
+          "number": "01",
+          "title": "晚高峰真并发实测 (20:00 - 22:30)",
+          "description": "所有节点测速均选在国内网络最拥堵的黄金时段进行，重点考核 4K 视频缓冲延迟、丢包率与持续下载速率，而非闲时虚高数据。"
+        },
+        {
+          "number": "02",
+          "title": "真内网专线 (IEPL/IPLC) 真实度校验",
+          "description": "通过多地 MTR 链路追踪、端内握手与 TLS RTT 延迟抖动比对，严格区分昂贵的独立企业内网专线与廉价的公网转发混充。"
+        },
+        {
+          "number": "03",
+          "title": "ChatGPT / Claude / 流媒体原生解锁检测",
+          "description": "实机测试 OpenAI、Claude、Gemini、Netflix 原生 IP 判定，明确标注各机场是全节点解锁还是部分节点可用，绝不含糊带过。"
+        },
+        {
+          "number": "04",
+          "title": "跑路风险与真实退款保障评估",
+          "description": "严查服务商运营年限、工单响应时效、支付通道安全（微信/支付宝/USDT）及套餐周期设置，优先推荐提供月付和永久不过期套餐的服务商。"
+        }
+      ]
+    },
+    "nova-team": {
+      "eyebrow": "测评技术团队",
+      "heading": "独立测评团队 · 严谨数据驱动",
+      "description": "本站评测人员均拥有 5 年以上跨境网络与分布式系统运维经验，坚守客观中立原则，以真实用户视角出具测试报告。",
+      "items": [
+        {
+          "name": "张辰 (Chen Z.)",
+          "role": "首席网络架构师 & 测速负责人",
+          "bio": "曾任知名跨境企业 CDN 与 SD-WAN 优化工程师，负责全球 100+ 节点链路监测与晚高峰 BGP 调度评测。",
+          "avatar": "/assets/images/t001-nova/t001-nova-avatar-01.webp"
+        },
+        {
+          "name": "林涵 (Han L.)",
+          "role": "大模型与流媒体连通性测试员",
+          "bio": "重度 AI 开发者，常年跟进 OpenAI、Anthropic 与各大流媒体平台的 IP 封锁与风控策略，负责解锁能力真实核验。",
+          "avatar": "/assets/images/t001-nova/t001-nova-avatar-02.webp"
+        },
+        {
+          "name": "王锐 (Ray W.)",
+          "role": "客户端与软路由生态技术顾问",
+          "bio": "熟悉 Mihomo、sing-box、Xray 内核，为 Windows、Mac、iOS 及 OpenWrt 路由器提供订阅导入与分流调优方案。",
+          "avatar": "/assets/images/t001-nova/t001-nova-avatar-03.webp"
+        }
+      ]
+    },
+    "faq3": {
+      "eyebrow": "GEO 核心问题解答",
+      "heading": "2026 机场选购常见疑惑解答",
+      "description": "针对用户在选购机场过程中最关心的高频问题，提供透明客观的专业避坑建议：",
+      "items": [
+        {
+          "question": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+          "answer": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。"
+        },
+        {
+          "question": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+          "answer": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。"
+        },
+        {
+          "question": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+          "answer": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。"
+        },
+        {
+          "question": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+          "answer": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。"
+        },
+        {
+          "question": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+          "answer": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。"
+        }
+      ]
+    },
+    "testimonial-v2": {
+      "eyebrow": "真实实测反馈",
+      "heading": "来自跨境出海与技术团队的实测心声",
+      "description": "听听外贸从业者、大模型研究员和海外流媒体发烧友在使用实测推荐节点后的真实评价：",
+      "avatarAltPrefix": "实测用户",
+      "items": [
+        {
+          "quote": "换到光速云的 IEPL 专线后，晚高峰远程连海外 GitHub 和拉取 Docker 镜像终于不再断线了，147 永久套餐放备用机上极度安心！",
+          "author": "刘先生 (DevOps 工程师)",
+          "initials": "XL",
+          "role": "跨境电商出海技术负责人",
+          "avatar": "/assets/images/t001-nova/t001-nova-avatar-01.webp"
+        },
+        {
+          "quote": "做 TikTok 跨境直播最怕跳 ping 和掉线，参考了站长的测速图选了光速云和暮光加速，晚高峰推流全程绿色 0 丢包，效果立竿见影。",
+          "author": "陈女士 (海外运营总监)",
+          "initials": "YC",
+          "role": "TikTok 跨境出海 MCN 机构",
+          "avatar": "/assets/images/t001-nova/t001-nova-avatar-02.webp"
+        },
+        {
+          "quote": "站长把 42 家机场的真实价格、线路类型和实测测速大图全放出来了，不仅没套路，还有各家最新的优惠码，省去我到处踩坑买垃圾月付的时间。",
+          "author": "赵先生 (资深外贸顾问)",
+          "initials": "RZ",
+          "role": "独立外贸顾问与跨境博主",
+          "avatar": "/assets/images/t001-nova/t001-nova-avatar-03.webp"
+        }
+      ]
+    },
+    "footer": {
+      "eyebrow": "机场测试 · 2026 权威机场测速指南",
+      "heading": "发现真正适合您的稳定专线节点",
+      "description": "本站所有测速数据与解锁报告均基于实机真实测试采集。推广链接含赞助参数，不会增加您的购买成本。请遵守当地法律法规，仅用于合法的学术科研与跨境商业用途。",
+      "primaryLabel": "查看 42 家机场品牌库",
+      "primaryHref": "/brands/",
+      "secondaryLabel": "客户端配置教程",
+      "secondaryHref": "/clients/",
+      "legalLinks": [
+        { "label": "隐私保护政策", "href": "/polityka-prywatnosci/" },
+        { "label": "免责与推广声明", "href": "/cookies/" }
+      ],
+      "footerLinks": [
+        { "label": "榜首主推", "href": "#featured" },
+        { "label": "TOP 10 榜单", "href": "#top10" },
+        { "label": "品牌库对比", "href": "/brands/" },
+        { "label": "客户端大全", "href": "/clients/" },
+        { "label": "GEO 问答", "href": "#faq" }
+      ],
+      "ariaLegal": "法律声明与政策",
+      "ariaNavigation": "页脚导航",
+      "copyright": "© 2026 机场测试 (jichangcesu.blog) 保留所有权利。",
+      "attributionPrefix": "",
+      "attributionLinkLabel": "",
+      "attributionLinkHref": ""
+    }
+  }
+};
+
+novaData.en = cnContent;
+novaData.pl = cnContent;
+
+fs.writeFileSync('template-t001-nova/src/data/i18n/nova.json', JSON.stringify(novaData, null, 2), 'utf8');
+console.log('Successfully written optimized Chinese SEO/GEO data to nova.json');

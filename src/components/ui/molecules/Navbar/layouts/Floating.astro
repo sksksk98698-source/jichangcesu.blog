@@ -70,7 +70,12 @@ const fixedShellClass = isDark
 				<!-- Dlaczego: globalny wzorzec przycisku (ui-button ui-button-primary ui-nav-cta)
          instead of raw classes. Gives consistent hover (text swap + color slide) and dimensions
 				     z core.css. Wzorzec z NavbarMainCentered (layout Centered). -->
-				<a href={formatInternalLink(headerData.cta.href)} class="ui-button ui-button-primary ui-nav-cta hidden sm:flex">
+				<a
+					href={formatInternalLink(headerData.cta.href)}
+					target={headerData.cta.href.startsWith("http") ? "_blank" : undefined}
+					rel={headerData.cta.href.startsWith("http") ? "nofollow sponsored noopener" : undefined}
+					class="ui-button ui-button-primary ui-nav-cta hidden sm:flex"
+				>
 					<span class="ui-button-text-wrap">
 						<span class="ui-button-text-default">{headerData.cta.label}</span>
 						<span class="ui-button-text-hover">{headerData.cta.hoverLabel}</span>
@@ -108,7 +113,12 @@ const fixedShellClass = isDark
 
 			<div class="relative z-[1010] flex shrink-0 items-center gap-2 sm:gap-3">
 				<LanguageDropdown locale={locale} tone={isDark ? "dark" : "light"} listId="lang-menu-list-fixed" />
-				<a href={formatInternalLink(headerData.cta.href)} class="ui-button ui-button-primary ui-nav-cta hidden sm:flex">
+				<a
+					href={formatInternalLink(headerData.cta.href)}
+					target={headerData.cta.href.startsWith("http") ? "_blank" : undefined}
+					rel={headerData.cta.href.startsWith("http") ? "nofollow sponsored noopener" : undefined}
+					class="ui-button ui-button-primary ui-nav-cta hidden sm:flex"
+				>
 					<span class="ui-button-text-wrap">
 						<span class="ui-button-text-default">{headerData.cta.label}</span>
 						<span class="ui-button-text-hover">{headerData.cta.hoverLabel}</span>

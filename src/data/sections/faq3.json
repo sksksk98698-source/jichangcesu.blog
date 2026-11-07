@@ -1,22 +1,37 @@
 {
-  "title": "Najczęściej zadawane pytania",
-  "description": "Najważniejsze informacje o współpracy, procesie i efektach, które mogą Państwa interesować przed rozpoczęciem projektu.",
+  "title": "2026 机场选购常见疑惑解答",
+  "heading": "2026 机场选购常见疑惑解答",
+  "description": "针对用户在选购机场过程中最关心的高频问题，提供透明客观的专业避坑建议：",
   "items": [
     {
-      "q": "Ile trwa przygotowanie nowej strony internetowej?",
-      "a": "Standardowy projekt realizujemy zwykle w ciągu 2 do 4 tygodni. Termin zależy od zakresu strony, liczby podstron oraz szybkości przekazania materiałów."
+      "q": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+      "question": "2026 年选机场，为什么一定要优先考虑 IEPL / IPLC 专线？",
+      "a": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。",
+      "answer": "普通公网中转节点在敏感时期容易遭遇大面积阻断或剧烈限速，丢包率往往高达 20% 以上。而 IEPL/IPLC 企业专线不过公网防火墙，端内直接内网穿透，不仅在晚高峰延迟几乎没有抖动，而且即使在国际海缆故障或敏感期也能保持 99.9% 在线率。"
     },
     {
-      "q": "Czy pomagacie w przygotowaniu treści i zdjęć?",
-      "a": "Tak. Możemy uporządkować istniejące materiały, przygotować strukturę treści oraz wskazać kierunek dla zdjęć i grafik, aby całość była spójna z marką."
+      "q": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+      "question": "为什么第一主推「光速云」？它的 147 元永久套餐适合哪些人？",
+      "a": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。",
+      "answer": "光速云自 2020 年运营至今，线路为 IEPL+企业内网双专线架构，晚高峰下载实测超 500Mbps。其「致敬斯诺克 147 永久套餐」只需一次性付费 147 元即可获得 247GB 永不过期的专线流量，单节点高达 2.5Gbps，特别适合平时作为备用梯子或轻中度办公的用户，彻底告别每月扣月租的焦虑。"
     },
     {
-      "q": "Czy strona będzie dobrze działać na telefonie?",
-      "a": "Tak. Projektujemy od początku z myślą o telefonach, tabletach i komputerach. Każdy kluczowy widok sprawdzamy w kilku szerokościach ekranu."
+      "q": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+      "question": "使用 ChatGPT / Claude 总是提示“所在国家不可用”该怎么选节点？",
+      "a": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。",
+      "answer": "OpenAI 和 Anthropic 对数据中心机房 IP（如常见廉价 VPS 广播 IP）有极为严格的封控检测。选机场必须认准拥有原生住宅 IP 或流媒体家宽解锁能力的节点。本站实测光速云、暮光加速的部分美国和新加坡节点支持稳定调用，且不易触发账号风控。"
     },
     {
-      "q": "Czy po publikacji mogę samodzielnie edytować stronę?",
-      "a": "Tak. Przygotowujemy strukturę tak, aby najważniejsze treści można było później łatwo aktualizować. Po wdrożeniu przekazujemy również krótką instrukcję obsługi."
+      "q": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+      "question": "新手购买机场套餐，建议买年付还是月付？如何防跑路？",
+      "a": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。",
+      "answer": "原则上强烈建议新用户「首次购买先选月付或小额体验包」。在验证完您当地宽带（电信/联通/移动）在晚高峰的真实表现后，再决定是否续费或转为年付。如果对长期稳定性有要求，尽量选择运营满 3 年以上、口碑良好且支持多种付款方式的老牌商家。"
+    },
+    {
+      "q": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+      "question": "Clash Verge Rev、v2rayN 和 Shadowrocket 哪个客户端最好用？",
+      "a": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。",
+      "answer": "Windows 和 Mac 电脑端首推 Clash Verge Rev（基于 Mihomo 内核，支持直观的规则分流与 TUN 虚拟网卡模式）；安卓手机首推 v2rayNG 或 FlClash；苹果 iOS 设备首推 Shadowrocket（小火箭）或 Sing-box。各平台安装包与项目地址可在本站「客户端大全」页面免费查阅。"
     }
   ]
 }

@@ -42,13 +42,14 @@ const stats = props.stats ?? fallback?.stats ?? [];
 ---
 
 <Section
-  id={props.sectionId ?? "hero"}
+  id="featured"
   tone="page"
   class:list={[
     "hero-section nova-responsive-hero overflow-hidden pt-[calc(var(--site-header-height,5.75rem)+var(--hero-below-header-gap,0.75rem))] pb-0",
     props.class,
   ]}
 >
+  <div id="hero" class="scroll-mt-24" aria-hidden="true"></div>
   <Container class="w-full max-w-none px-0">
     <div class="relative overflow-hidden rounded-t-xl bg-surface">
       <div class="grid min-w-0 grid-cols-1 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:grid-cols-2">
@@ -60,7 +61,18 @@ const stats = props.stats ?? fallback?.stats ?? [];
             </Heading>
             <Text variant="lead" class="max-w-[38rem] md:max-w-[25rem] md:text-[clamp(1rem,1.45vw,1.2rem)] lg:max-w-[38rem] lg:text-[clamp(1.1rem,1.45vw,1.4rem)]">{description}</Text>
             <div class="flex flex-wrap items-center gap-3">
-              {primaryCTA && <Button href={primaryCTA.href} variant="primary" size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{primaryCTA.label}</Button>}
+              {primaryCTA && (
+                <Button
+                  href={primaryCTA.href}
+                  variant="primary"
+                  size="lg"
+                  target={primaryCTA.href.startsWith("http") ? "_blank" : undefined}
+                  rel={primaryCTA.href.startsWith("http") ? "nofollow sponsored noopener" : undefined}
+                  class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]"
+                >
+                  {primaryCTA.label}
+                </Button>
+              )}
               {secondaryCTA && <Button href={secondaryCTA.href} variant="outline" size="lg" class="min-h-11 w-full font-semibold tracking-normal sm:w-auto md:text-[clamp(1rem,1.15vw,1.2rem)]">{secondaryCTA.label}</Button>}
             </div>
           </div>

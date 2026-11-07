@@ -1,24 +1,24 @@
 {
-  "fullName": "Nova Creative Agency",
-  "name": "Nova",
+  "fullName": "机场测试 - 2026 权威机场测速与选购推荐指南",
+  "name": "机场测试",
   "branding": {
-    "icon": "ph-star",
+    "icon": "ph-gauge",
     "font": "Satoshi",
-    "tagline": "Websites for ambitious brands",
+    "tagline": "真实晚高峰实测 · 专线节点横评 · 拒绝虚假宣传",
     "logoImage": "",
     "favicon": "/favicon.svg",
-    "logoSuffix": "Logo"
+    "logoSuffix": "jichangcesu.blog"
   },
   "address": "123 Example Street, 00-001 Warsaw",
   "zipCode": "00-001",
   "city": "Warsaw",
   "phone": "+48 123 456 789",
-  "email": "contact@yourcompany.com",
+  "email": "contact@jichangcesu.blog",
   "hours": "Mon-Fri: 8:00 AM - 9:00 PM",
   "nip": "1234567890",
   "krs": "0000123456",
   "regon": "",
-  "siteUrl": "https://yourcompany.com",
+  "siteUrl": "https://jichangcesu.blog",
   "smtp": {
     "smtpHost": "smtp.example.com",
     "smtpPort": 587,

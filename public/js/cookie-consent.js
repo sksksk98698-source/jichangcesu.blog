@@ -38,8 +38,8 @@
     }, 500);
   }
 
-  window.WebScaleCookies = window.WebScaleCookies || {};
-  window.WebScaleCookies.openSettings = showConsent;
+  window.SiteConsent = window.SiteConsent || {};
+  window.SiteConsent.openSettings = showConsent;
 
   if (consent && !getStatus()) {
     setTimeout(showConsent, 1000);

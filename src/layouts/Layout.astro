@@ -22,7 +22,6 @@ import FooterColumnsBlock from '@components/registry/shell/FooterColumnsBlock.as
 import FooterMinimalBlock from '@components/registry/shell/FooterMinimalBlock.astro';
 import FooterPromoBlock from '@components/registry/shell/FooterPromoBlock.astro';
 import NovaFooterBlock from '@components/registry/shell/NovaFooterBlock.astro';
-import NovaDemoBanner from '@components/ui/molecules/NovaDemoBanner.astro';
 import type { NovaLocale } from '@utils/nova-i18n';
 
 
@@ -63,15 +62,13 @@ interface Props {
 // By default (seo.index = false in seo.json) site is noindex, follow;
 // client explicitly enables indexing by setting index to true.
 const isStaging = import.meta.env.NETLIFY === 'true' || import.meta.env.STAGING === 'true';
-const reviewApiUrl = import.meta.env.PUBLIC_REVIEW_API_URL || '';
-const reviewProject = import.meta.env.PUBLIC_REVIEW_PROJECT || '';
 
 const { 
 	title = seo.defaultTitle, 
 	description = seo.defaultDescription,
 	ogImage = seo.defaultOgImage,
 	noIndex = isStaging || !seo.index,
-	lang = SITE_LOCALE,
+	lang = 'zh-CN',
 	locale = SITE_LOCALE === 'en' ? 'en' : 'pl',
 	theme: themeProp,
 	sectionPattern = 'off',
@@ -153,6 +150,12 @@ const analyticsConfig = {
   clarityId: resolveAnalyticsId(import.meta.env.PUBLIC_CLARITY_ID, seo.analytics?.clarityId),
 };
 const hasOptionalTracking = Object.values(analyticsConfig).some(Boolean);
+
+// 搜索引擎站长平台验证预留 (环境变量优先，其次 seo.json 配置)
+const googleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || (seo as any).verification?.google || '';
+const bingVerification = import.meta.env.PUBLIC_BING_SITE_VERIFICATION || (seo as any).verification?.bing || '';
+const shenmaVerification = import.meta.env.PUBLIC_SHENMA_SITE_VERIFICATION || (seo as any).verification?.shenma || '';
+const baiduVerification = import.meta.env.PUBLIC_BAIDU_SITE_VERIFICATION || (seo as any).verification?.baidu || '';
 
 // Why: navbar and footer are GLOBAL. Layout renders them on every
 // page (fallback to defaultVariant from registry), so no subpage appears
@@ -261,7 +264,7 @@ const mainPaddingStyle = fullBleedTop
 				// at opacity: 0. After timeout we remove data-motion-ready; if it
 				// arrives later anyway, reveal has no visual effect and nothing breaks.
 				setTimeout(function () {
-					if (!window.__webscaleFadeMotion) {
+					if (!window.__siteFadeMotion) {
 						document.documentElement.removeAttribute('data-motion-ready');
 					}
 				}, 3000);
@@ -272,11 +275,11 @@ const mainPaddingStyle = fullBleedTop
 		<!-- Content Security Policy -->
 		<meta http-equiv="Content-Security-Policy" content="
 			default-src 'self';
-			script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://unpkg.com https://www.clarity.ms https://scripts.clarity.ms https://static.cloudflareinsights.com http://localhost:8400;
-			style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
-			font-src 'self' data: https://fonts.gstatic.com https://unpkg.com;
-			img-src 'self' data: blob: https://www.google-analytics.com https://www.google.pl https://www.facebook.com https://images.unsplash.com https://i.pravatar.cc;
-			connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms http://localhost:8400;
+			script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://www.clarity.ms https://scripts.clarity.ms https://static.cloudflareinsights.com;
+			style-src 'self' 'unsafe-inline';
+			font-src 'self' data:;
+			img-src 'self' data: blob: https://www.google-analytics.com https://www.facebook.com;
+			connect-src 'self' https://www.google-analytics.com https://region1.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms;
 			frame-src 'self' https://open.spotify.com https://www.youtube.com https://www.google.com https://maps.google.com https://www.openstreetmap.org;
 			form-action 'self';
 			base-uri 'self';
@@ -296,7 +299,7 @@ const mainPaddingStyle = fullBleedTop
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={title} />
-		<meta property="og:locale" content={lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : lang === 'pl' ? 'pl_PL' : `${lang}_${lang.toUpperCase()}`} />
+		<meta property="og:locale" content={lang === 'zh-CN' || lang === 'zh' ? 'zh_CN' : lang === 'en' ? 'en_US' : `${lang}_${lang.toUpperCase()}`} />
 
 		<!-- Twitter/X: without twitter:card links get no card preview -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -306,6 +309,12 @@ const mainPaddingStyle = fullBleedTop
 
 		<!-- SEO Best Practices -->
 		<link rel="canonical" href={canonicalURL} />
+
+		<!-- 搜索引擎站长平台验证能力预留 (源码直出，绝无客户端JS注入) -->
+		{googleVerification && <meta name="google-site-verification" content={googleVerification} />}
+		{bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
+		{shenmaVerification && <meta name="shenma-site-verification" content={shenmaVerification} />}
+		{baiduVerification && <meta name="baidu-site-verification" content={baiduVerification} />}
 		{
 			// Custom code from client (pixels, meta, analytics scripts).
 			customHead && <Fragment set:html={customHead} />
@@ -314,11 +323,8 @@ const mainPaddingStyle = fullBleedTop
 	</head>
 	<body
 		class:list={['min-h-screen flex flex-col ui-bg-page font-sans text-brand-dark antialiased selection:bg-brand-primary/10 selection:text-brand-primary', bodyClass]}
-		data-review-api={reviewApiUrl || undefined}
-		data-review-project={reviewProject || undefined}
 	>
 		{clientRuntime && <MobileDrawer locale={locale} />}
-		{showShell && theme === 'nova' && <NovaDemoBanner locale={locale} />}
 		{showShell && navbarResolved && (
 			<div class:list={theme === 'nova' ? ['relative'] : []}>
 				<navbarResolved.component layout={navbarResolved.layout} theme={navbarTheme} locale={locale} />

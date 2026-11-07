@@ -9,18 +9,8 @@ const { locale = 'pl' } = Astro.props as Props;
 const copy = getNovaCopy(locale).navigation;
 ---
 
-<div class="nova-language-switch" aria-label={copy.languageLabel}>
-  <a
-    href={getNovaLocalePath('pl')}
-    class:list={['nova-language-switch__link', locale === 'pl' && 'is-active']}
-    aria-current={locale === 'pl' ? 'page' : undefined}
-  >PL</a>
-  <span class="nova-language-switch__separator" aria-hidden="true">/</span>
-  <a
-    href={getNovaLocalePath('en')}
-    class:list={['nova-language-switch__link', locale === 'en' && 'is-active']}
-    aria-current={locale === 'en' ? 'page' : undefined}
-  >EN</a>
+<div class="nova-language-switch" aria-label="简体中文">
+  <span class="nova-language-switch__link is-active" aria-current="page">CN</span>
 </div>
 
 <style>

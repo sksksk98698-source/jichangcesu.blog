@@ -7,13 +7,16 @@ import data from "@data/sections/faq3.json";
 import { ACTIVE_TEMPLATE } from "@config/template";
 
 interface FaqItem {
-  q: string;
-  a: string;
+  q?: string;
+  question?: string;
+  a?: string;
+  answer?: string;
 }
 
 export interface Props {
   sectionId?: string;
   title?: string;
+  heading?: string;
   description?: string;
   tagline?: string;
   items?: FaqItem[];
@@ -22,8 +25,9 @@ export interface Props {
 }
 
 const {
-  sectionId = "faq3",
+  sectionId = "faq",
   title,
+  heading,
   description,
   tagline,
   items,
@@ -32,12 +36,14 @@ const {
 } = Astro.props as Props;
 
 const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : data;
-const resolvedTitle = title || fallback?.title || "";
+const resolvedTitle = title || heading || fallback?.title || "";
 const resolvedDescription = description || fallback?.description || "";
-const list = items && items.length > 0 ? items : fallback?.items ?? [];
+const list = items && items.length > 0 ? items : (fallback?.items as FaqItem[]) ?? [];
 ---
 
-<Section id={sectionId} tone="page" class:list={["ui-bg-page", className]}>
+<Section id={sectionId} tone="page" class:list={["ui-bg-page scroll-mt-20", className]}>
+  <div id="faq" class="scroll-mt-24" aria-hidden="true"></div>
+  <div id="faq3" class="scroll-mt-24" aria-hidden="true"></div>
   <div class="ui-container">
     <SectionHeader
       title={resolvedTitle}
@@ -49,28 +55,32 @@ const list = items && items.length > 0 ? items : fallback?.items ?? [];
     />
 
     <div class="mx-auto mt-12 w-full max-w-3xl space-y-3" data-accordion>
-      {list.map((item, index) => (
-        <details
-          class="group ui-bg-surface ui-radius-lg overflow-hidden border border-brand-dark/10 transition-colors duration-300 open:border-brand-dark/20"
-          open={index === 0 ? true : undefined}
-        >
-          <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-5 py-5 text-left md:px-7 md:py-6">
-            <Heading tag="h3" class="!m-0 pr-4 !text-[17px] leading-snug font-medium text-brand-dark md:!text-[18px]">
-              {item.q}
-            </Heading>
-            <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-brand-dark/15 text-brand-primary transition-transform duration-300 group-open:rotate-45">
-              <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m-7-7h14" />
-              </svg>
-            </span>
-          </summary>
-          <div class="px-5 pb-6 md:px-7">
-            <Text variant="feature-body-sm" class="max-w-2xl ui-text-on-light-subtle">
-              {item.a}
-            </Text>
-          </div>
-        </details>
-      ))}
+      {list.map((item, index) => {
+        const questionText = item.q || item.question || "";
+        const answerText = item.a || item.answer || "";
+        return (
+          <details
+            class="group ui-bg-surface ui-radius-lg overflow-hidden border border-brand-dark/10 transition-colors duration-300 open:border-brand-dark/20"
+            open={index === 0 ? true : undefined}
+          >
+            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-5 py-5 text-left md:px-7 md:py-6">
+              <Heading tag="h3" class="!m-0 pr-4 !text-[17px] leading-snug font-medium text-brand-dark md:!text-[18px]">
+                {questionText}
+              </Heading>
+              <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-brand-dark/15 text-brand-primary transition-transform duration-300 group-open:rotate-45">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m-7-7h14" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-6 md:px-7">
+              <Text variant="feature-body-sm" class="max-w-2xl ui-text-on-light-subtle">
+                {answerText}
+              </Text>
+            </div>
+          </details>
+        );
+      })}
     </div>
   </div>
 </Section>

@@ -3,10 +3,10 @@
   "contactTitle": "Contact",
   "copyrightText": "All rights reserved.",
   "attribution": {
-    "label": "Design and development by WebScale",
-    "href": "https://webscale.pl",
-    "prefix": "Built by:",
-    "linkLabel": "WebScale"
+    "label": "All rights reserved.",
+    "href": "/",
+    "prefix": "Copyright:",
+    "linkLabel": "jichangcesu.blog"
   },
   "aria": {
     "quickNav": "Quick links and documents",

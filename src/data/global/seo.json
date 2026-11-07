@@ -1,13 +1,19 @@
 {
-  "defaultTitle": "Nova, websites for ambitious brands",
-  "defaultDescription": "We create modern websites that strengthen your image, attract clients and support business growth.",
+  "defaultTitle": "机场测试 · 2026 稳定机场推荐与晚高峰节点测速指南 (jichangcesu.blog)",
+  "defaultDescription": "机场测试 (jichangcesu.blog) 专注于 2026 真实晚高峰节点测速与流媒体/ChatGPT 解锁评测。收录光速云、暮光加速、飞猫云等 42 家精选机场，提供透明实测图、跑路预警雷达与全平台客户端下载指引。",
   "defaultOgImage": "/og-image-v20261010.png",
-  "index": false,
+  "index": true,
   "follow": true,
   "analytics": {
     "googleAnalyticsId": "",
     "googleTagManagerId": "",
     "facebookPixelId": "",
     "clarityId": ""
+  },
+  "verification": {
+    "google": "",
+    "bing": "",
+    "shenma": "",
+    "baidu": ""
   }
 }

@@ -127,8 +127,8 @@ const hasEmbed = src.length > 0;
 								iframe.src = iframe.dataset.calendarSrc || "";
 								consent?.classList.add("hidden");
 							};
-							if (!window.WebScaleCookies || getStatus() === "accepted") loadCalendar();
-							else settings?.addEventListener("click", () => window.WebScaleCookies?.openSettings());
+							if (!window.SiteConsent || getStatus() === "accepted") loadCalendar();
+							else settings?.addEventListener("click", () => window.SiteConsent?.openSettings());
 							window.addEventListener("cookie-consent-accepted", loadCalendar);
 
 							let loaded = false;

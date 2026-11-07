@@ -1,0 +1,356 @@
+---
+import Layout from "@layouts/Layout.astro";
+import airports from "@data/airports.json";
+
+const seoTitle = "2026 万字机场选购与避坑 FAQ 全景百科 · 机场测试 (jichangcesu.blog)";
+const seoDescription = "万字级长文深度解析翻墙机场核心疑难。覆盖 Shadowsocks/VLESS/Hysteria2 协议区别、IEPL/IPLC 专线与中转对比、ChatGPT/Claude/奈飞原生 IP 解锁、Clash/v2rayN/小火箭高频报错排查与防跑路避坑真相。";
+
+const topAirports = airports.slice(0, 5);
+
+// 6 大核心模块与 40+ 细分硬核问答
+const faqCategories = [
+  {
+    id: "protocols",
+    badge: "技术协议篇",
+    title: "一、底层协议与加密技术对比 (SS / VLESS / Hysteria 2 / TUIC)",
+    desc: "很多新手总在纠结 Shadowsocks、Trojan 还是 VLESS，甚至听信某些商家鼓吹的“独家超级协议”。本章从传输原理与网络特征，客观拆解各主流协议的本质区别。",
+    questions: [
+      {
+        q: "Shadowsocks、VMess、VLESS 和 Trojan，日常使用到底选哪个？",
+        a: "日常使用如果处于企业 IEPL / IPLC 内网专线环境下，协议对速度和延迟的影响微乎其微，建议首选 Shadowsocks（尤其是 AEAD 加密如 2022-blake3 或 chacha20-ietf-poly1305）或者 Trojan，因为它们在路由器和移动设备上的加解密开销极低、省电且性能吞吐极大。而在直连或者普通公网中转环境下，推荐使用带有 XTLS / Reality 伪装的 VLESS 协议，能有效防御主动探测和深度包检测（DPI）。"
+      },
+      {
+        q: "最近很火的 Hysteria 2 和 TUIC v5 是什么？为什么在晚高峰速度极快？",
+        a: "Hysteria 2 和 TUIC 都是基于 UDP 协议（使用 QUIC 传输层）开发的下一代代理协议。传统的 TCP 协议在遭遇丢包时会强制等待确认包（三次握手与拥塞重传），导致在丢包率高的公网线路上发生严重的丢包雪崩（吞吐量瞬间跌至几 KB）。而 Hysteria 2 自研了强力丢包补偿算法（Brutal 拥塞控制），即使在 20%~30% 恶劣丢包环境下也能跑满带宽，特别适合恶劣宽带环境或跨国直连线路。但需要注意：部分地区的中国移动或联通运营商会针对公网 UDP 流量进行严酷的 QoS 限速（速度限制至 5Mbps 甚至直接丢包），此时需要开启伪装端口（如伪装成 443 端口的 QUIC）。"
+      },
+      {
+        q: "什么是 Reality 伪装协议？它为什么能防止被防火墙主动探测？",
+        a: "过去的 TLS 伪装协议（如 Trojan 或普通 VLESS+TLS）需要机场主或自建者购买真实的域名和证书。当审查系统向该节点 IP 发送握手探针时，如果域名与 IP 不符或证书存在异常，很容易被识别封锁。而 Reality 借用了真实大厂的 TLS 1.3 证书公钥（例如借用苹果 apple.com 或微软 microsoft.com 的官方证书），在握手时如果探针没有携带正确的认证密匙，Reality 会将探针直接无缝转发到真正的苹果/微软官方服务器。探测者收到的响应完全与访问大厂官方一致，从数学和密码学层面彻底杜绝了主动探测的可能。"
+      },
+      {
+        q: "SSR (ShadowsocksR) 还在用吗？为什么老牌大机场基本淘汰了 SSR？",
+        a: "SSR 早在 2017 年就已停止核心维护。其基于历史 Python 开发的代码架构性能瓶颈严重，且伪装混淆特征早已被现代深度学习审查系统精准提取特征码。目前正规老牌专线机场几乎 100% 转向基于 Go / Rust 语言开发的高性能内核（如 Shadowsocks-rust、Sing-box、Xray），单机吞吐能力是 SSR 的数十倍以上。如果某家机场依然仅提供单一的 SSR 订阅，说明其技术底座年久失修，建议慎重购买。"
+      },
+      {
+        q: "节点名称里的“Shadowsocks-2022”是什么？它有什么优势？",
+        a: "Shadowsocks-2022 是由开源社区在 2022 年对传统 Shadowsocks 规范进行的重大重构。它消除了传统 Shadowsocks 在密文头部存在的元数据长度特征，引入了防重放攻击缓存机制，并支持更现代、抗量子计算更佳的 blake3 密钥推导体系。同时它针对多核高并发服务器进行了深度汇编优化，目前顶级专线机场（如光速云、泡泡狗等）已逐步将其作为核心主干协议。"
+      }
+    ]
+  },
+  {
+    id: "circuits",
+    badge: "线路网络篇",
+    title: "二、线路架构内幕与真假专线鉴别 (直连 / BGP中转 / IPLC / IEPL)",
+    desc: "很多商家打着“全专线”名号，实际却是廉价公网中转；更有甚者通过高倍率偷跑流量。本章为您彻底讲透网络物理链路逻辑。",
+    questions: [
+      {
+        q: "直连、公网中转、IPLC 与 IEPL 专线，究竟有什么区别？",
+        a: "一表看懂区别：\n1. 直连线路（Direct）：国内客户端直接连接境外机房 VPS。无中转服务器，受国际出口公网拥堵影响极大，晚高峰丢包率通常在 15%~50%，极易断流。\n2. 公网中转线路（Relay）：国内入口服务器（如国内各大城市机房）接收流量后，通过公网隧道转发给境外落地机。入口延迟低，但中转到落地的公网段仍走海底光缆公网通道，敏感时期仍会被干扰。\n3. IPLC（International Private Leased Circuit，国际私有租用线路）：完全点对点的物理内网专线。端内流量直接经由专网穿透，不过公网 GFW 防火墙，无任何审查与内容过滤，延迟极低且 0 丢包。\n4. IEPL（International Ethernet Private Line，国际以太网专线）：技术更先进的二层以太网企业专线。相比 IPLC 具备更强的以太网封装能力和抖动控制，是目前翻墙机场圈最高规格的物理链路标准。"
+      },
+      {
+        q: "为什么很多声称“IPLC 专线”的机场，晚高峰依然掉线断流？如何辨别真假专线？",
+        a: "辨别真假专线有三大硬核实测法：\n第一看【敏感期表现】：在重大国际会议或特定时期，公网中转和直连节点会瞬间大面积飘红掉线，而真正的物理专线不过审查系统，依然毫秒级响应、稳如泰山。\n第二看【延迟抖动曲线】：在晚高峰 20:00~23:00 期间，使用命令行长 ping 香港入口节点。真正的 IEPL 专线抖动（Jitter）不会超过 2ms，丢包率为 0%；而假专线（实为公网转发）延迟会从 40ms 暴涨到 150ms 以上，并伴随频繁的 Request Timed Out。\n第三看【成本常识】：真正的 1Gbps IEPL 专线月租成本高达数万元人民币。如果某家机场号称“全 IPLC 专线”，年付却只要 20 元还给每月 1000G，从商业常识判断必然是严重超卖的假专线或公网中转套壳。"
+      },
+      {
+        q: "什么是机场节点的“倍率”？0.2x、1.0x、3.0x、10.0x 是怎么扣费的？",
+        a: "倍率是指机场系统在扣除您订阅账户流量时的系数乘数。\n例如：您购买了 100GB 流量套餐。\n- 若使用 1.0x 倍率节点：下载 1GB 真实流量，扣除账户 1GB 额度；\n- 若使用 0.2x 倍率节点：下载 1GB 真实流量，仅扣除账户 0.2GB 额度（相当于可以用 500GB，通常用于冷门大带宽或非高峰下载）；\n- 若使用 3.0x 或 10.0x 倍率节点：下载 1GB 流量，会直接扣除 3GB 甚至 10GB 额度！\n避坑提醒：部分不良机场用低价套餐吸引用户，但其稳定可用的专线节点倍率全标为 3x~5x，导致原本 100G 的套餐实际只能用 20G。选购时必须查看其默认主力节点的真实倍率（以 1.0x 正常倍率为首选）。"
+      },
+      {
+        q: "为什么专线机场的入口往往在广州、深圳、上海或徐州？",
+        a: "因为中国的国际海缆与陆缆物理登陆站主要分布在：上海（主要通往日本、北美、欧洲方向）、青岛、汕头，以及连接香港的陆路大通道（深圳、广州）。企业级 IEPL 专线通常直接部署于广州/深圳到香港的陆缆机房（粤港专线，延迟仅 5~8ms），或上海到日本千叶/东京的海缆机房（沪日专线，延迟约 25~30ms）。因此优秀的机场入口都会设在沿海一线枢纽城市，以实现最低的光速物理传输延迟。"
+      }
+    ]
+  },
+  {
+    id: "unlock",
+    badge: "AI与流媒体篇",
+    title: "三、AI 助手 (ChatGPT / Claude) 与海外流媒体原生解锁指南",
+    desc: "很多用户明明挂着节点，却提示“ChatGPT is not available in your country”或者只能看奈飞自制剧。本章从 IP 纯净度、机房广播段与家宽住宅代理机制剖析根源。",
+    questions: [
+      {
+        q: "为什么连上了美国节点，ChatGPT 依然提示“所在国家不可用”或“Access Denied”？",
+        a: "OpenAI 和 Anthropic 对来访 IP 部署了业内最严苛的风控数据库（接入了 Cloudflare Turnstile、MaxMind、IPinfo 欺诈度打分）。它们会严查以下三点：\n1. 机房广播 IP（Data Center IP）：绝大部分廉价 VPS 机房 IP 的欺诈分极高，直接被列入黑名单，连注册和登录都无法通过；\n2. DNS 污染泄漏：您的代理客户端如果未配置 DNS 远程解析，本地电信/联通 DNS 依然在向国内服务器解析，导致 OpenAI 探测到了您的真实请求来源；\n3. 节点多用户共用触发风控：同一个机房 IP 下有上百人同时高频调用 ChatGPT 网页版，系统会自动判定为恶意脚本攻击并封锁 IP。\n解决方案：选择拥有【原生住宅 IP 解锁】或【流媒体专属原生机房】的机场（如本站实测推荐的光速云、暮光加速），并在客户端开启 TUN 模式或严格规则分流。"
+      },
+      {
+        q: "Claude 3.5 Sonnet / Opus 封号极为频繁，使用机场节点该如何防范？",
+        a: "Claude 的风控等级在业内堪称最严。防封三大铁律：\n第一：坚决不要在同一个浏览器会话中“频繁跨国切换节点”（前一秒用香港节点，下一秒突然切到英国节点），这会被系统判定为账号被盗用或代理共用；\n第二：避免使用香港/澳门节点访问 Claude（Claude 官方目前尚未向中国大陆及港澳地区开放，必须使用纯净的美国、英国、日本或新加坡落地节点）；\n第三：注册与充值必须使用干净的住宅环境，并保持固定的节点出口进行访问。"
+      },
+      {
+        q: "为什么有的机场看 Netflix（奈飞）只能看自制剧，看不到非自制剧？",
+        a: "Netflix 将影片版权严格划分为两类：\n- 自制剧（Netflix Originals，如《怪奇物语》《鱿鱼游戏》）：Netflix 拥有全球独家版权，只要识别到能连接其服务器，哪怕是普通机房 IP 也会允许播放；\n- 非自制剧（区域版权剧，如部分好莱坞大片或日本本土动漫）：必须经过版权方严格的属地化验证。如果 Netflix 发现您的 IP 属于公有云数据中心（如 AWS、Linode、DigitalOcean），就会自动隐藏非自制剧。\n真正的【Netflix 全解锁】是指机场落地机挂载了当地原生住宅 IP（Residential IP）或通过高效的 DNS 流媒体分流技术，欺骗 Netflix 服务器让其认为您是当地普通家庭宽带用户。"
+      },
+      {
+        q: "什么是原生 IP？什么是广播 IP？怎么查询节点 IP 的真实属性？",
+        a: "原生 IP（Native IP）是指该 IP 段在 APNIC / ARIN 国际互联网注册局所登记的注册地，与该 IP 实际物理机房机柜所在地完全一致，被流媒体数据库标记为高信誉住宅或本地企业；广播 IP 则是由其他国家/地区机房通过 BGP 宣告广播到当地的 IP，极易被各大流媒体和金融服务识别为代理。\n查询方法：可以在连接该节点后，使用浏览器访问权威欺诈度查询网站：Scamalytics (scamalytics.com) 或 IPinfo (ipinfo.io)，查看 Fraud Score（欺诈分值低于 20 为纯净）以及 Type 是否为 ISP / Residential。"
+      }
+    ]
+  },
+  {
+    id: "clients",
+    badge: "客户端排错篇",
+    title: "四、各操作系统客户端选型与 100% 常见故障排查",
+    desc: "Windows、Mac、iOS、Android、Linux 与软路由上客户端五花八门。遇到打不开国内网页、延迟全部 Timeout 或导入报错时，请按本章指引快速自救。",
+    questions: [
+      {
+        q: "2026 年各操作系统目前最推荐使用哪款客户端？",
+        a: "各平台首选推荐清单（全开源安全无广告）：\n- Windows 电脑：首推 Clash Verge Rev（基于 Mihomo/Clash.Meta 内核，界面现代，支持一键安装虚拟网卡 TUN 模式）或 Sing-box 图形版；\n- macOS 苹果电脑：首推 Clash Verge Rev (Mac) 或 sing-box 客户端，M系列芯片原生支持，发热极低；\n- Android 安卓手机：首推 v2rayNG（轻量极速）或 FlClash / Clash Meta for Android；\n- iOS 苹果手机：首推 Shadowrocket（小火箭，功能最全上手极快）或 Loon / Sing-box / Quantumult X（需要外区 Apple ID 购买下载）；\n- 软路由 / OpenWrt：首推 OpenClash 或 ShellCrash。"
+      },
+      {
+        q: "报错排查 1：打开代理后能看 YouTube/Google，但打不开国内微信、网易云和百度？",
+        a: "原因分析：您的客户端代理模式误设为了【全局模式（Global）】。全局模式下所有国内流量都会绕道海外节点，导致微信风控、国内网站延迟暴涨甚至被防火墙拒绝访问。\n解决方案：\n1. 将客户端模式从【全局（Global）】切换为【规则模式（Rule）】；\n2. 在规则模式下，只有被墙的海外网站才会走海外代理，国内域名（GeoIP: CN、Direct）会自动直连，既省流量又保持国内网络极速飞驰。"
+      },
+      {
+        q: "报错排查 2：所有节点进行延迟测试均显示“Timeout”、“-1”或“9999ms”，但别人用着正常？",
+        a: "自救四步法（按顺序排查）：\n第一步：检查电脑/手机的系统时间是否精准同步。如果设备时间与标准互联网北京时间偏差超过 90 秒，TLS 证书握手会因为时间戳失效而直接阻断（去系统设置里点击“立即同步时间”）；\n第二步：检查订阅流量是否耗尽或套餐是否已过期；\n第三步：检查是否有杀毒软件（如 360、火绒、Windows Defender 防火墙）误拦截了 Clash / Mihomo 内核的入站与出站网络权限；\n第四步：在客户端的代理设置中，切换测速 URL（默认测速地址为 Google 时若本地 DNS 污染可能无法测速，可修改测速链接为：http://cp.cloudflare.com/generate_204）。"
+      },
+      {
+        q: "报错排查 3：导入机场订阅链接提示“Network Error 500/502”或“Invalid YAML”怎么办？",
+        a: "原因分析：通常是订阅提供商的 Web 服务器暂时遇到高并发故障，或者生成的配置文件包含非标准字符导致解析器崩溃。\n解决方案：\n1. 登录机场官网后台，重新复制一次订阅链接（优先复制 Clash / Mihomo 专用订阅链接，避免复制通用订阅）；\n2. 若机场提供【订阅转换服务】，可将订阅链接经由可信的后端转换为标准 Clash 配置；\n3. 检查机场官网公告，看是否正在进行域名被墙更换或数据库维护。"
+      },
+      {
+        q: "什么是 TUN 虚拟网卡模式？它与传统的系统代理（System Proxy）有什么区别？",
+        a: "传统的系统代理只是向 Windows / macOS 系统注册了一个本地 HTTP/Socks5 端口（如 127.0.0.1:7890）。只有主动遵守系统代理协议的软件（如浏览器、电报）才会走代理，而命令行终端（CMD / PowerShell）、Steam 游戏客户端、Spotify 应用等往往会无视系统代理，导致直接裸连超时。\nTUN 模式则是在操作系统中虚拟出一张真实的物理网卡，强制接管操作系统网络层（IP 层）的全部上行和下行流量，无论是命令行 git clone、游戏更新还是内嵌开发工具，都能无死角享受规则分流加速。"
+      }
+    ]
+  },
+  {
+    id: "security",
+    badge: "隐私与支付篇",
+    title: "五、隐私安全防查、支付方式防坑与合规底线",
+    desc: "翻墙上网到底安不安全？机场主能不能看到我的聊天记录和密码？买机场用微信支付宝会不会被查？本章客观揭晓行业运行事实。",
+    questions: [
+      {
+        q: "机场主或者网络运营者能看到我的密码、银行卡信息或私人聊天记录吗？",
+        a: "结论：绝对看不到密码和明文聊天内容，但能看到您访问了哪个目标域名（除非开启了 ECH/ESNI 加密）。\n原理解析：现代互联网绝大多数网站和服务均采用 HTTPS（TLS 1.2 / 1.3）端到端强加密通信。您的浏览器在与 Google / 银行服务器握手时，使用的是端到端非对称加密。机场服务器只充当“数据包搬运工”，它们看到的全部是高度混淆的密文乱码，根本无法解密出您的密码或具体浏览内容。\n但机场主可以通过其服务器上的访问日志，获知您在几点几分向哪个外部域名（如 youtube.com、twitter.com）发送了数据请求。因此切勿使用不明来源的免费野鸡机场处理涉及极度敏感的机密业务。"
+      },
+      {
+        q: "购买机场套餐用微信/支付宝支付会被查吗？有没有必要特意用 USDT 虚拟币？",
+        a: "客观事实：目前绝大部分面对国内用户的正规机场，其微信/支付宝结算是通过境外或第三方法人开设的合规免签约聚合发票通道（商户名称多显示为数码科技、咨询服务或海外百货等）。数以千万计的日常消费中，公安与金融监管机构的稽查重点在于电信诈骗、洗钱与非法政治赌博黑灰产，对普通个人购买小额网络加速服务并不会主动立案追踪。\n但如果您个人追求极致隐私隔离，或者希望实现 100% 身份匿名，建议优先选择支持 USDT (TRC-20) 虚拟货币结算的大型商家。"
+      },
+      {
+        q: "什么是 DNS 泄漏（DNS Leak）？如何彻底防止 DNS 泄露您的真实地理位置？",
+        a: "DNS 泄漏是指：虽然您的网页数据走的是海外代理节点，但您的浏览器或操作系统在发起域名查询时，仍然优先向本地电信/联通/移动的 DNS 服务器（如 114.114.114.114）发出请求。这样本地运营商就能完整记录下您所有的海外网站访问记录，甚至返回被污染的假 IP。\n防护方法：在 Clash Verge Rev、Sing-box 等高级客户端中开启【Fake-IP】机制与【DNS 远程解析】，并配置海外知名安全 DoH（如 https://1.1.1.1/dns-query），让域名解析请求完全由境外落地节点代为发起，杜绝本地泄漏。"
+      },
+      {
+        q: "为什么绝对不建议新手一次性购买“两年付”或“三年付”套餐？",
+        a: "这是机场圈最痛的教训。无论是多大的老牌机场，其上游机房、国际专线资源以及收款通道随时可能面临不可抗力政策变动或断线风险。一旦一次性投入几百甚至上千元购买超长年付，当机场遭遇跑路或服务品质断崖式下滑时，用户几乎没有任何维权与退款途径。黄金法则永远是：【首选月付或季度付，最长不超过年付；优先挑选支持永久不过期流量包的老牌品牌】。"
+      }
+    ]
+  },
+  {
+    id: "selection",
+    badge: "行业真相篇",
+    title: "六、机场主的经营成本账本与 2026 避坑真相",
+    desc: "为什么几块钱一个月的机场注定卡顿？为什么“无限流量”是最大谎言？看懂底层商业逻辑，才能选到真正不折腾的长期稳定工具。",
+    questions: [
+      {
+        q: "为什么 9.9 元甚至 5 元一个月的所谓“廉价无限流量机场”注定会卡顿？",
+        a: "算一笔真实行业账单：正规机房的 1Gbps 优质带宽，每月公网采购成本都在数千元到上万元；如果是 IEPL 物理专线，每 1Mbps 的月租更在 150~200 元人民币以上。9.9 元如果给您 1000G 甚至无限流量，商家为了盈利，唯一的手段就是【极度超卖】——把原本只能容纳 100 人的带宽卖给 5000 个人！白天大家没上网时不觉得，一到晚高峰 8 点，几千人同时挤进小水管，所有人速度暴跌为 0，断流卡顿是必然的物理规律。"
+      },
+      {
+        q: "既然自建 VPS 翻墙看似很安全，为什么现在越来越多程序员放弃自建而选优质机场？",
+        a: "很多技术人员起初都会尝试租用海外 VPS（如搬瓦工、Linode、Vultr）自建节点。但很快就会遇到三大致命痛点：\n1. IP 极易被墙：个人自建单一 IP 一旦遭遇防火墙阻断，更换一次 IP 的费用高达 3~8 美元，维护成本不可控；\n2. 缺乏国内专线优化：个人自建通常只能走公网直连海缆，晚高峰严重受到骨干网拥塞与丢包干扰；\n3. 无法解决流媒体与 AI 解锁：单一机房 IP 很快会被 Netflix、ChatGPT 等服务拉黑。\n而优质成熟机场拥有专职运维团队、数十条全球 BGP/IEPL 内网专线、备用入口智能容灾与原生住宅 IP 轮换池，综合稳定性和时间精力成本远优于个人单打独斗。"
+      },
+      {
+        q: "2026 年选购一家值得长期信赖的机场，最核心的指标是什么？",
+        a: "牢记【稳健三要素法则】：\n1. 运营年限满 3 年以上：历经多次敏感期大考仍存活的品牌，证明其上游资源稳定、资金链健康且有成熟团队运维（如 2020 年运营至今的光速云）；\n2. 具备真实的物理专线（IEPL/IPLC）：晚高峰 0 丢包，是远程办公与影音娱乐的底线保障；\n3. 官方社群活跃且工单响应快：出现突发线路故障时有公开及时的透明公告，而不是悄悄禁言失联。"
+      }
+    ]
+  }
+];
+
+// 构建 FAQPage Schema.org 结构化数据
+const schemaFaqList = faqCategories.flatMap(c => c.questions).map(item => ({
+  "@type": "Question",
+  "name": item.q,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.a.replace(/\n/g, "<br/>")
+  }
+}));
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": schemaFaqList
+};
+---
+
+<Layout title={seoTitle} description={seoDescription} fullBleedTop={false}>
+  <script type="application/ld+json" set:html={JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://jichangcesu.blog/"},{"@type":"ListItem","position":2,"name":"万字机场 FAQ 百科","item":"https://jichangcesu.blog/faq/"}]})} />
+  <!-- 注入 FAQPage 结构化数据 -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <div class="relative min-h-screen py-12 sm:py-16 bg-brand-page text-brand-dark">
+    <!-- 顶部背景流光 -->
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-brand-accent/10 to-transparent blur-3xl opacity-60" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <!-- 页面顶部 Header -->
+        <!-- 面包屑导航 -->
+        <nav aria-label="面包屑导航" class="mb-4 flex items-center justify-center gap-1.5 text-xs text-brand-dark/50">
+          <a href="/" class="hover:text-brand-primary transition-colors">首页</a>
+          <span>/</span>
+          <span class="text-brand-dark/80 font-medium">万字机场 FAQ 百科</span>
+        </nav>
+      <div class="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/5 px-4 py-1.5 text-xs font-semibold text-brand-accent mb-4">
+          <span>GEO 深度知识库 · 万字避坑指南</span>
+        </div>
+        <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl text-brand-dark">
+          2026 翻墙机场全景百科与高频 FAQ
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-brand-dark/70 leading-relaxed">
+          汇集 6 大核心板块、40+ 深度实测疑难问答。从底层协议、真假专线、流媒体/ChatGPT 原生解锁到客户端 100% 报错排查，为您提供透明客观的专业解惑。
+        </p>
+
+        <!-- 目录快速跳转导航 -->
+        <div class="mt-8 flex flex-wrap justify-center gap-2">
+          {faqCategories.map(cat => (
+            <a
+              href={`#${cat.id}`}
+              class="rounded-lg border border-brand-dark/10 bg-white/70 px-3 py-1.5 text-xs font-medium text-brand-dark/80 hover:border-brand-primary hover:text-brand-primary transition-all shadow-sm"
+            >
+              {cat.badge}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- 主体内容与侧边栏布局 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        
+        <!-- 左侧 8 列：万字 FAQ 内容核心区 -->
+        <div class="lg:col-span-8 space-y-12">
+          {faqCategories.map((cat, catIdx) => (
+            <section id={cat.id} class="scroll-mt-24 rounded-2xl border border-brand-dark/10 bg-white/80 backdrop-blur-md p-6 sm:p-8 shadow-sm">
+              <div class="mb-6 border-b border-brand-dark/10 pb-4">
+                <span class="inline-block rounded-md bg-brand-primary/10 px-2.5 py-1 text-xs font-bold text-brand-primary mb-2">
+                  {cat.badge}
+                </span>
+                <h2 class="text-xl sm:text-2xl font-bold text-brand-dark">
+                  {cat.title}
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-brand-dark/70 leading-relaxed">
+                  {cat.desc}
+                </p>
+              </div>
+
+              <!-- 问答手风琴列表 -->
+              <div class="space-y-4">
+                {cat.questions.map((item, qIdx) => (
+                  <details
+                    class="group rounded-xl border border-brand-dark/10 bg-brand-page/50 p-4 transition-all duration-200 open:border-brand-primary/40 open:bg-white"
+                    open={catIdx === 0 && qIdx === 0 ? true : undefined}
+                  >
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-brand-dark">
+                      <span class="text-sm sm:text-base leading-snug group-hover:text-brand-primary transition-colors">
+                        ❓ {item.q}
+                      </span>
+                      <span class="flex size-6 shrink-0 items-center justify-center rounded-full border border-brand-dark/15 text-xs text-brand-primary transition-transform group-open:rotate-180">
+                        ▼
+                      </span>
+                    </summary>
+                    <div class="mt-3.5 pt-3 border-t border-brand-dark/5 text-xs sm:text-sm text-brand-dark/80 leading-relaxed whitespace-pre-line pl-2">
+                      💡 {item.a}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <!-- 右侧 4 列：推荐品牌转化侧边栏挂件 -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- 核心推荐卡片：光速云 -->
+          <div class="sticky top-24 rounded-2xl border-2 border-brand-accent/40 bg-white p-6 shadow-md">
+            <div class="flex items-center justify-between mb-3">
+              <span class="rounded bg-brand-accent px-2 py-0.5 text-xs font-bold text-white">
+                综合评分榜首 · 2026 首推
+              </span>
+              <span class="text-xs text-brand-dark/50 font-mono">2020 稳定运营至今</span>
+            </div>
+            <h3 class="text-xl font-black text-brand-dark">光速云 (Guangsu Cloud)</h3>
+            <p class="mt-2 text-xs text-brand-dark/70 leading-relaxed">
+              IEPL + 企业内网专线架构，晚高峰 500Mbps 极速吞吐。针对 ChatGPT / Claude 原生住宅 IP 优化，特设 147 元 247GB 永不过期流量包，备用与主力首选。
+            </p>
+            <div class="mt-4 rounded-lg bg-brand-page p-3 border border-brand-dark/5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-brand-dark/70">限时专属 9 折码：</span>
+                <span class="font-mono font-bold text-brand-accent select-all">AMM</span>
+              </div>
+              <div class="mt-1 flex items-center justify-between text-xs">
+                <span class="text-brand-dark/70">起步特惠：</span>
+                <span class="font-bold text-brand-primary">¥9.9 / 月 或 ¥147 永久</span>
+              </div>
+            </div>
+            <a
+              href="https://sahude.gsyvipaff.com/#/?code=keqgvT5Y"
+              target="_blank"
+              rel="nofollow sponsored noopener"
+              class="mt-4 flex w-full items-center justify-center rounded-xl bg-brand-dark px-4 py-3 text-sm font-bold text-white shadow-sm hover:bg-brand-primary transition-colors"
+            >
+              直达光速云官网选购 ↗
+            </a>
+
+            <!-- 更多实测梯队链接 -->
+            <div class="mt-6 pt-5 border-t border-brand-dark/10">
+              <h4 class="text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-3">
+                更多实测第一梯队稳定商家
+              </h4>
+              <ul class="space-y-2.5">
+                {topAirports.slice(1, 5).map(ap => (
+                  <li class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-brand-dark">{ap.name}</span>
+                    <a
+                      href={ap.affUrl}
+                      target="_blank"
+                      rel="nofollow sponsored noopener"
+                      class="text-brand-primary hover:underline font-mono"
+                    >
+                      {ap.price} ↗
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/brands/"
+                class="mt-4 block text-center text-xs font-semibold text-brand-accent hover:underline"
+              >
+                查看全部 42 家实测品牌库对比 →
+              </a>
+            </div>
+          </div>
+
+          <!-- 导航辅助卡片 -->
+          <div class="rounded-2xl border border-brand-dark/10 bg-white/70 p-5">
+            <h4 class="text-sm font-bold text-brand-dark mb-2">需要更多帮助？</h4>
+            <p class="text-xs text-brand-dark/70 leading-relaxed mb-4">
+              查阅我们的全套指南矩阵，获取客户端安装包或了解最新暴雷预警：
+            </p>
+            <div class="space-y-2">
+              <a href="/clients/" class="flex items-center justify-between rounded-lg bg-brand-page p-2.5 text-xs font-medium text-brand-dark hover:bg-brand-accent/5">
+                <span>💻 客户端官方与开源下载大全</span>
+                <span>→</span>
+              </a>
+              <a href="/warning/" class="flex items-center justify-between rounded-lg bg-brand-page p-2.5 text-xs font-medium text-brand-dark hover:bg-brand-accent/5">
+                <span>🚨 机场跑路预警雷达与黑名单</span>
+                <span>→</span>
+              </a>
+              <a href="/free/" class="flex items-center justify-between rounded-lg bg-brand-page p-2.5 text-xs font-medium text-brand-dark hover:bg-brand-accent/5">
+                <span>🎁 免费试用盘点与网络工具箱</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>

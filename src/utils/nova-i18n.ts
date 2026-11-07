@@ -4,11 +4,11 @@ export type NovaLocale = 'pl' | 'en';
 
 // Why: lista języków jest w jednym miejscu, żeby dropdown i ścieżki nie rozjechały się przy dodaniu języka.
 export const novaLocaleMeta: Record<NovaLocale, { label: string; short: string }> = {
+  en: { label: '简体中文', short: 'CN' },
   pl: { label: 'Polski', short: 'PL' },
-  en: { label: 'English', short: 'EN' },
 };
 
-export const novaLocales = Object.keys(novaLocaleMeta) as NovaLocale[];
+export const novaLocales: NovaLocale[] = ['en'];
 
 export function getNovaCopy(locale: NovaLocale = 'pl') {
   return copy[locale] ?? copy.pl;
@@ -28,15 +28,21 @@ function withNovaBase(path: string): string {
 }
 
 export function getNovaLocalePath(locale: NovaLocale): string {
-  return withNovaBase(locale === 'en' ? '/' : '/pl/');
+  return withNovaBase('/');
 }
 
 export function getNovaNavigationPath(href: string, locale: NovaLocale): string {
-  if (href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+  if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
     return href;
   }
 
+  if (href.startsWith('/#') || href.startsWith('#')) {
+    const hash = href.startsWith('/#') ? href.slice(1) : href;
+    const base = withNovaBase('/');
+    const cleanBase = base.endsWith('/') ? base : `${base}/`;
+    return `${cleanBase}${hash}`;
+  }
+
   const normalized = href.startsWith('/') ? href : `/${href}`;
-  if (locale === 'en') return withNovaBase(normalized);
-  return withNovaBase(normalized === '/' ? '/pl/' : `/pl${normalized}`);
+  return withNovaBase(normalized);
 }

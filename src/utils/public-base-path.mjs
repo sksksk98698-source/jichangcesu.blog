@@ -10,5 +10,13 @@ export function resolvePublicBasePath({ publicBasePath, publicSiteUrl }) {
   const explicitBasePath = normalizePublicBasePath(publicBasePath);
   if (explicitBasePath) return explicitBasePath;
 
-  return normalizePublicBasePath(new URL(publicSiteUrl).pathname);
+  if (!publicSiteUrl) return '';
+
+  try {
+    const raw = String(publicSiteUrl).trim();
+    const valid = raw.startsWith('http') ? raw : `https://${raw.replace(/^\/+/, '')}`;
+    return normalizePublicBasePath(new URL(valid).pathname);
+  } catch {
+    return '';
+  }
 }

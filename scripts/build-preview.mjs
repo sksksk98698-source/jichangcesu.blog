@@ -8,8 +8,8 @@ const result = spawnSync(npmCommand, ['run', 'build'], {
   shell: process.platform === 'win32',
   env: {
     ...process.env,
-    PUBLIC_BASE_PATH: 'preview/nova',
-    PUBLIC_SITE_URL: 'https://webscale.pl/preview/nova/',
+    PUBLIC_BASE_PATH: process.env.PUBLIC_BASE_PATH || '',
+    PUBLIC_SITE_URL: process.env.PUBLIC_SITE_URL || 'https://jichangcesu.blog/',
   },
 });
 

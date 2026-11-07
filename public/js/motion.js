@@ -1,6 +1,6 @@
 (function () {
-  if (window.__webscaleFadeMotion) return;
-  window.__webscaleFadeMotion = true;
+  if (window.__siteFadeMotion) return;
+  window.__siteFadeMotion = true;
 
   var fadeSelector = '[data-motion="fade"]';
   var viewportSelector = '[data-motion="viewport"]';
